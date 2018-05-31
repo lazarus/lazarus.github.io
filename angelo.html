@@ -1,0 +1,316 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>xat online chat. Profile for Austin</title>
+<LINK REL="SHORTCUT ICON" href="https://xat.com/web_gear/chat/icon.ico">
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+
+<style>
+body {
+  /*padding:0px;
+	margin: 0px 0px 0px 0px;*/
+	FONT-SIZE: 12pt;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+div#xatstyme {
+	background:#0;
+	color: #00; 
+	overflow: auto;
+}
+
+body {
+ background: url(https://s20.postimg.cc/797sja20d/tumblr_mom5e1_Rpi_J1rpz2goo4_250.png);
+}
+@font-face{
+    font-family:"glowies8";
+    src: url('https://dl.dropboxusercontent.com/s/bk5emg0gbfsiexh/aveline.ttf');
+}
+:root {
+	--color1: rgb(1, 1, 1);
+	--color2: rgb(69, 4, 4);
+	--color3: rgb(205, 205, 205);
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+.screen {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	box-shadow: inset 0px 0px 0px 30px var(--color1);
+	background: rgba(0,0,0,0.6);
+}
+.box {
+    display: block;
+    position: absolute;
+    width: 832px;
+    height: 480px;
+    background: transparent;
+    left: 50%;
+    top: 50%;
+    border-top: 22px solid var(--color2);
+    overflow: hidden;
+    transform: translate(-50%,-50%);
+    color: var(--color3);
+}
+.box:before {
+	display: block;
+	position: absolute;
+	content: '';
+	width: 832px;
+	height: 480px;
+	background: url(https://s20.postimg.cc/t9o4znsbh/original.gif) -10px;
+	filter: grayscale();
+	z-index: -1;
+}
+.left {
+	display: inline-block;
+	height: 100%;
+	background: rgb(25,25,25);
+	width: 390px;
+}
+.left:after {
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	border-top: 250px solid transparent;
+	border-bottom: 350px solid transparent;
+	border-left: 125px solid #191919;
+	margin-left: 100%;
+}
+.avi {
+	position: absolute;
+	top: 30px;
+	left: 150px;
+	border-radius: 50%;
+	border: 7px solid var(--color1);
+	width: 88px;
+	height: 88px;
+	z-index: 0;
+}
+#name {
+	position: absolute;
+	top: 50px;
+    right: calc(100% - 155px);
+	text-shadow: 0px 0px 1px var(--color1);
+	text-align: right;
+	transform: rotate(-5deg);
+	font-size: 50px;
+	font-family: 'glowies8';
+	z-index: 2;
+}
+#id {
+	position: absolute;
+	top: 100px;
+	left: 40px;
+	padding: 0px 10px;
+	background: var(--color2);
+	height: 20px;
+	width: 110px;
+	transform: rotate(-5deg);
+	font-family: monospace;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 20px;
+	z-index: 1;
+	color: var(--color1);
+}
+.about {
+	position: absolute;
+	left: 120px;
+	top: 155px;
+	display: block;
+	width: 230px;
+	height: 15px;
+	background: var(--color1);
+	border-radius: 5px;
+	border: 1px solid var(--color2);
+	padding: 30px;
+	color: var(--color2);
+}
+.about img {
+    float: left;
+    margin-top: 2px;
+    margin-right: 60px;
+    filter: brightness(0.4);
+}
+.about span {
+	font-size: 9px;
+	display: inline-block;
+	text-align: center;
+}
+.about span p {
+	color: var(--color3);
+    margin-bottom: 3px;
+}
+.info {
+	left: 40px;
+	top: 260px;
+	position: absolute;
+	display: block;
+	width: 300px;
+	height: 150px;
+	background: var(--color1);
+	border-radius: 5px;
+	border: 1px solid rgb(56, 56, 56);
+	padding: 15px 10px;
+}
+.info .header {
+	color: var(--color2);
+	text-transform: uppercase;
+	font-family: Helvetica;
+	font-weight: bold;
+	display: block;
+	padding: 0px 5px 5px 5px;
+	border-bottom: 1px solid var(--color2);
+	margin-bottom: 20px;
+	line-height: 15px;
+}
+.info p {
+	color: var(--color3);
+	font-family: monospace;
+	text-align: justify;
+	font-size: 10px;
+	line-height: 21px;
+}
+.right {
+    display: inline-block;
+    position: absolute;
+    height: inherit;
+    width: calc(832px - 390px);
+    background: url(https://s20.postimg.cc/43n6t71fh/sebastian_michaelis_x_reader_on_a_class_field_trip_by_michaelaof.png) bottom right/contain no-repeat;
+    animation: bg 1.5s linear infinite;
+    background-size: 77%;
+    background-position-y: 0;
+}
+@keyframes bg {
+	0% {
+    	background-position-x: calc(100%);
+    	opacity: 0;
+	}
+
+	50% {
+    	background-position-x: calc(100% + 10px);
+    	opacity: 1;
+	}
+
+	100% {
+    	background-position-x: calc(100% + 10px);
+    	opacity: 1;
+	}
+}
+
+div#noowayfixed {
+	z-index: 2147483647;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+div#noowaymenu
+{
+	background-color:#009;
+	background: linear-gradient(#000014, #000024, #00004e);
+	border-radius: 0px 5px 0px 0px;
+	display: none;
+	FONT-SIZE: 12pt;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+div#noowayitems
+{
+	padding-top: 5px;
+	padding-right: 0px;
+	/*padding-bottom: 5px;*/
+	padding-left: 0px;
+	margin-left: 6px;
+	line-height: 130%;
+	color:#fff;
+}
+div#noowayitems > a
+{
+	color:#fff;
+	text-decoration: none;
+}
+div#noowayitems > a:hover {
+	text-decoration: underline;
+}
+</style>
+<div id="xatstyme">
+
+	<div class="screen">
+
+		<div class="box">
+
+			<div class="left">
+
+				<img class="avi" src="https://s20.postimg.cc/t94u7pehp/image.png" />
+
+				<span id="name">Angelo</span>
+				<span id="id">18500000</span>
+
+				<div class="about">
+					<img src="https://78.media.tumblr.com/tumblr_m7vzaiecBK1r6o8v2.gif" />
+
+					<span><p>flamingosis - football head</p>◄ ❚❚ ►</span>
+				</div> <!-- about -->
+
+				<div class="info">
+					<div class="header">●● INFO</div>
+
+					<p>My name is Angelo and I live in Texas. I'm 21 years
+						old and have been using xat since 2009. I enjoy
+						gaming, learning to code, listening to logi, and help-
+						ing users on xat. If you need to contact me, you can
+						find me on the forum.</p>
+
+				</div> <!-- info -->
+
+			</div> <!-- left -->
+
+			<div class="right">
+			</div> <!-- right -->
+
+		</div> <!-- box -->
+
+	</div> <!-- screen -->
+
+</div>
+<div onmouseover="showMenu(this)" onmouseout="hideMenu(this)" id="noowayfixed">
+  <img id="noowayplanet" src="https://xat.com/images/logow2.svg">
+  <div id="noowaymenu">
+	<div id="noowayitems">
+<a href="https://xat.com">xat</a><br>
+<a href="https://xat.com/web_gear/chat/editprofile.php?email=Austin">Edit</A><br>
+
+<A href="https://xat.com/wiki">Wiki (help)</A><br> 
+<A href="//forum.xat.com/">Forum</A><br>    
+
+<A href="https://xat.com/privacy.html">Privacy</A><br>
+<A href="https://xat.com/terms.html">Terms</A><br>
+<A href="https://xat.com/safety.html">Safety</A><br>
+
+<A href="https://xat.com/web_gear/chat/inappropriateprofile.php?id=638877683">Inappropriate&#x1F44E;</A><br>
+&copy;2018 xat<br>
+
+	</div>
+	<a href="https://xat.com"><img src="https://xat.com/images/logow.svg"></a>
+  </div>
+</div>
+
+<script>
+function showMenu(x) {
+	document.getElementById("noowaymenu").style.display = "block";
+	document.getElementById("noowayplanet").style.display = "none";
+}
+
+function hideMenu(x) {
+	document.getElementById("noowaymenu").style.display = "none";
+	document.getElementById("noowayplanet").style.display = "block";
+}
+</script>
+</head>
+<body>
