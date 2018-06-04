@@ -22,49 +22,123 @@ div#xatstyme {
 	font-family: minecraft;
 	src: url('https:\/\/austinh115.github.io/minecraft.ttf');
 }
+@font-face {
+	font-family: minecraftia;
+	src: url('https:\/\/austinh115.github.io/minecraftia.ttf');
+}
 * {
 	margin: 0;
 	padding: 0;
 }
 body {
+	overflow: hidden;
 }
 .screen {
-	background: url(https://i.imgur.com/fw9KR.png) no-repeat center fixed,
-	url(http://www.lb-stuff.com/Minecraft/AwesomeView.png) no-repeat center fixed;
+	background:
+		/* url(https://i.imgur.com/fw9KR.png) no-repeat center fixed, */
+		url(http://www.lb-stuff.com/Minecraft/AwesomeView.png) no-repeat center fixed;
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	z-index: -9999;
 	/* filter: blur(3px); */
 }
-.menu {
-	width: 850px;
-	height: 575px;
+.logo, .menu, .options {
 	text-align: center;
-	top: calc(50% - 50px);
-	left: 50%;
 	position: absolute;
 	transform: translate(-50%, -50%);
 }
+.logo {
+	left: 50%;
+	top: calc(50% - 242px);
+	perspective: 400px;
+}
+.menu {
+	left: 50%;
+	top: calc(50% + 46px);
+}
+.options {
+	top: calc(50% + 156px + 70px);
+	left: calc(50% - 35px);
+}
 .title {
 	font-family: minecraft;
-    font-size: 145px;
-    color: #a89f9c;
-    text-shadow: -3px -3px 0 #000,  
-			      3px -3px 0 #000,
-			     -3px  3px 0 #000,
-			      3px  3px 0 #000;
+	font-size: 135px;
+	color: #a89f9c;
+	text-shadow: -3px -3px 0 #000,  
+				  3px -3px 0 #000,
+				 -3px  3px 0 #000,
+				  3px  3px 0 #000,
+				 -3px 25px 0 #000,
+				  3px 25px 0 #000;
 	display: block;
+	transform-origin: 50% 100%;
+	transform: rotateX(20deg);
 }
 .subtitle {
-	font-family: minecraft;
-    font-size: 145px;
-    color: white;
-    text-shadow: 3px 3px 0 #000;
+	font-family: minecraftia;
+	font-size: 25px;
+	color: #ff0;
+	text-shadow: 3px 3px 0 #000;
 	display: block;
-	transform: rotate(-20deg);
+	transform: translate(270px, -40px) rotate(-20deg);
 }
-
+.subtitle a {
+	color: inherit;
+	text-decoration: none;
+}
+.subtitle a:hover {
+	color: #fd0;
+}
+.button, .icon {
+	margin: 0 auto;
+	display: block;
+	width: 590px;
+	height: 48px;
+	margin-bottom: 18px;
+	box-shadow: 0px 0px 0px 3px #000;
+	border: 3px solid #b6b6b6;
+	border-style: outset;
+	background: url(https://i.imgur.com/4sSqOcf.png), #6f6f6f;
+	color: #fff;
+}
+.options .button {
+	width: 283px;
+}
+.options .icon {
+	width: 48px;
+}
+.options li {
+	display: inline-block;
+}
+.options li:nth-child(2) {
+	margin: 0px 13px;
+}
+.button a, .icon a {
+	font-family: minecraftia;
+	text-decoration: none;
+	line-height: 70px;
+	font-size: 24px;
+	text-shadow: 3px 3px 0 #000;
+	color: inherit;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.button:hover, .icon:hover {
+	color: yellow;
+	background-color: #6589AC;
+	border-color: #ACD0F3;
+}
+[id*=wayp],[id*=waym] {
+    position: fixed;
+    top: calc(50% + 195px);
+    left: calc(50% - 397px);
+    transform: scale(0.6);
+}
+[id*=waym] {
+    transform: scale(0.6) translateY(calc(-100% - 8px));
+}
 
 div#noowayfixed {
 	z-index: 2147483647;
@@ -104,12 +178,36 @@ div#noowayitems > a:hover {
 
 	<div class="screen"></div> <!-- screen -->
 
+	<div class="logo">
+
+		<span class="title">austin</span>
+		<span class="subtitle"><a href="https://FEXBots.com">FEXBots</a> Chief Assistant!</span>
+
+	</div> <!-- logo -->
+
 	<div class="menu">
 
-		<span class="title">minecraft</span>
-		<span class="subtitle">150 bpm for 400000 minutes!</span>
+		<ul>
+
+			<li class="button"><a href="https://xat.com/FEXBots">FEXBots</a></li>
+			<li class="button"><a href="https://xat.com/PGO">PGO</a></li>
+			<li class="button"><a href="https://forum.xat.com/messenger/compose/?to=37256">Message</a></li>
+
+		</ul>
 
 	</div> <!-- menu -->
+
+	<div class="options">
+
+		<ul>
+
+			<li class="icon"><a href="">&nbsp;</a></li>
+			<li class="button"><a href="https://xat.com/web_gear/chat/editprofile.php?email=Austin">Options...</a></li>
+			<li class="button"><a href="#">Quit Game</a></li>
+
+		</ul>
+
+	</div> <!-- options -->
 
 </div>
 <div onmouseover="showMenu(this)" onmouseout="hideMenu(this)" id="noowayfixed">
