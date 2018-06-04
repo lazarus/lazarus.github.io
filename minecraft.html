@@ -18,10 +18,51 @@ div#xatstyme {
 	overflow: auto;
 }
 
-@font-face{font-family:minecraft;src:url('https:\/\/austinh115.github.io/minecraft.ttf')}
-
+@font-face {
+	font-family: minecraft;
+	src: url('https:\/\/austinh115.github.io/minecraft.ttf');
+}
+* {
+	margin: 0;
+	padding: 0;
+}
 body {
- background: url(https://i.imgur.com/fw9KR.png) no-repeat center fixed, url(http://www.lb-stuff.com/Minecraft/AwesomeView.png);
+}
+.screen {
+	background: url(https://i.imgur.com/fw9KR.png) no-repeat center fixed,
+	url(http://www.lb-stuff.com/Minecraft/AwesomeView.png) no-repeat center fixed;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -9999;
+	/* filter: blur(3px); */
+}
+.menu {
+	width: 850px;
+	height: 575px;
+	text-align: center;
+	top: calc(50% - 50px);
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+.title {
+	font-family: minecraft;
+    font-size: 145px;
+    color: #a89f9c;
+    text-shadow: -3px -3px 0 #000,  
+			      3px -3px 0 #000,
+			     -3px  3px 0 #000,
+			      3px  3px 0 #000;
+	display: block;
+}
+.subtitle {
+	font-family: minecraft;
+    font-size: 145px;
+    color: white;
+    text-shadow: 3px 3px 0 #000;
+	display: block;
+	transform: rotate(-20deg);
 }
 
 
@@ -61,9 +102,14 @@ div#noowayitems > a:hover {
 </style>
 <div id="xatstyme">
 
-	<div class="screen">
+	<div class="screen"></div> <!-- screen -->
 
-	</div> <!-- screen -->
+	<div class="menu">
+
+		<span class="title">minecraft</span>
+		<span class="subtitle">150 bpm for 400000 minutes!</span>
+
+	</div> <!-- menu -->
 
 </div>
 <div onmouseover="showMenu(this)" onmouseout="hideMenu(this)" id="noowayfixed">
