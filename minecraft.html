@@ -30,6 +30,9 @@ div#xatstyme {
 	margin: 0;
 	padding: 0;
 }
+*::selection {
+	background: none;
+}
 body {
 	overflow: hidden;
 }
@@ -65,12 +68,19 @@ body {
 	font-family: minecraft;
 	font-size: 135px;
 	color: #a89f9c;
-	text-shadow: -3px -3px 0 #000,  
-				  3px -3px 0 #000,
-				 -3px  3px 0 #000,
-				  3px  3px 0 #000,
-				 -3px 25px 0 #000,
-				  3px 25px 0 #000;
+	text-shadow:
+		/* Text outline */
+		-3px -3px 0 #000,  
+		 3px -3px 0 #000,
+		-3px  3px 0 #000,
+		 3px  3px 0 #000,
+		/* Shadow */
+		-3px 25px 0 #000,
+		 0px 25px 0 #000,
+		 3px 25px 0 #000,
+		 0px 26px 25px rgba(0,0,0,0.6),
+		 0px 26px 1px rgba(0,0,0,0.5),
+		 0px  0px 25px rgba(0,0,0,.2);
 	display: block;
 	transform-origin: 50% 100%;
 	transform: rotateX(20deg);
@@ -80,8 +90,18 @@ body {
 	font-size: 25px;
 	color: #ff0;
 	text-shadow: 3px 3px 0 #000;
-	display: block;
-	transform: translate(270px, -40px) rotate(-20deg);
+	position: absolute;
+	width: 100%;
+	margin: -50px;
+	animation: subtitle 0.25s linear alternate infinite;
+}
+@-webkit-keyframes subtitle {
+	0% {
+		transform: scale(0.875) rotate(-20deg);
+	}
+	100% {
+		transform: scale(1) rotate(-20deg);
+	}
 }
 .subtitle a {
 	color: inherit;
@@ -90,7 +110,7 @@ body {
 .subtitle a:hover {
 	color: #fd0;
 }
-.button, .icon {
+.button, .icon, [id*=yit] a, [href*=inapp]::before {
 	margin: 0 auto;
 	display: block;
 	width: 590px;
@@ -101,6 +121,7 @@ body {
 	border-style: outset;
 	background: url(https://i.imgur.com/4sSqOcf.png), #6f6f6f;
 	color: #fff;
+	transition: all 0.1s linear;
 }
 .options .button {
 	width: 283px;
@@ -114,7 +135,7 @@ body {
 .options li:nth-child(2) {
 	margin: 0px 13px;
 }
-.button a, .icon a {
+.button a, .icon a, [id*=yit] a, [href*=inapp]::before {
 	font-family: minecraftia;
 	text-decoration: none;
 	line-height: 70px;
@@ -125,19 +146,74 @@ body {
 	height: 100%;
 	display: block;
 }
-.button:hover, .icon:hover {
+.button:hover, .icon:hover, [id*=yit] a:hover, [href*=inapp]:hover::before {
 	color: yellow;
-	background-color: #6589AC;
-	border-color: #ACD0F3;
+	text-decoration: none;
+	background-color: #8089c4;
+	border-color: #9aa5ea;
+	transform: scale(1.0175);
 }
-[id*=wayp],[id*=waym] {
-    position: fixed;
-    top: calc(50% + 195px);
-    left: calc(50% - 397px);
+[id*=wayp], [id*=yite], [id*=ymen] {
+	position: fixed;
+	top: calc(50% + 195px);
+	left: calc(50% - 397px);
+	transform: scale(0.6);
+}
+[id*=yite]::before {
+    display: block;
+    content: '';
+    background: url(https://xat.com/images/logow2.svg) no-repeat 0px 20px;
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    top: -122px;
+    left: -93px;
     transform: scale(0.6);
+    z-index: 998;
 }
 [id*=waym] {
-    transform: scale(0.6) translateY(calc(-100% - 8px));
+	right: -100%;
+	transform: none;
+}
+[id*=yite] {
+	width: 614px;
+	font-size: 0;
+	transform: translateX(93px) translateY(calc(42px + 18px));
+}
+[id*=ymen] > a {
+	display: none;
+}
+[id*=yit] a, [href*=inapp]::before {
+    width: 283px;
+    height: 48px;
+    display: inline-block;
+    margin-right: 18px;
+    overflow: hidden;
+    text-align: center;
+    z-index:999;
+}
+[href*=inapp] {
+    font-size: 0;
+    width: 210px;
+}
+[href*=inapp]::before {
+    content: 'Inappropriate';
+    position: absolute;
+    margin-left: -24px;
+    margin-top: -3px;
+    line-height: 70px;
+}
+[id*=yit] > a:hover {
+	text-decoration: none;
+}
+[href*=inapp]:hover::before {
+	color: white;
+	transform: none;
+    text-decoration: underline;
+}
+
+[id*=yit] a:nth-child(-1n+7), [id*=yit] br {
+	display: none;
 }
 
 div#noowayfixed {
