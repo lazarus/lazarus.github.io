@@ -21,69 +21,352 @@ div#xatstyme {
 * {
 	margin: 0;
 	padding: 0;
+	font-family: "RuneScape";
 }
 *::selection {
 	background: none;
 }
-@font-face{
-    font-family:"rs";
-    src: url(./rs/runescape_uf.ttf);
+@font-face {
+	font-family:"RuneScape";
+	src:
+		url("./rs/runescape_chat_font.eot?") format("eot"),
+		url("./rs/runescape_chat_font.woff") format("woff"),
+		url("./rs/runescape_chat_font.ttf") format("truetype"),
+		url("./rs/runescape_chat_font.svg#Runescape-Chat-Font") format("svg");
+	font-weight:normal;
+	font-style:normal;
 }
+
 body {
 	overflow: hidden;
-	background: url(./rs/image.png) no-repeat center fixed, #779ecb;
+	background: url(./rs/bg.jpg) no-repeat top/cover;
 }
 .ui {
-	width: 1594px;
+	/*width: 1594px;
 	height: 914px;
 
-	margin: 33px auto;
+	margin: 33px auto;*/
+
+	width: 100vw;
+	height: 100vh;
 
 	position: relative;
+
+    /*position: absolute;
+    left: -65%;
+    top: -65%;*/
 }
 
-.stat-bars, .tabs {
+.stat-bars, .tabs, .chat {
 	position: absolute;
 }
 
 .stat-bars {
-	width: 235px;
-	height: 200px;
+	width: 211px;
+	height: 165px;
 
-    right: 0;
-    top: 0;
+	right: 0;
+	top: 0;
 
-	background:
+	background:		
 		url(./rs/1071_0.png) no-repeat top 45px right 154px, /* Health Container */
 		url(./rs/1071_0.png) no-repeat top 81px right 153px, /* Prayer Container */
 		url(./rs/1071_0.png) no-repeat top 115px right 135px, /* Run Container */
-		url(./rs/1071_0.png) no-repeat top 145px right 105px, /* Special Container */
+		/* url(./rs/1071_0.png) no-repeat top 145px right 105px, /* Special Container */
 
 		url(./rs/1177_0.png) no-repeat top right /* Map Container */
 	;
 }
 
-.hp, .pray, .run, .spec {
-	font-family: 'rs';
+.map {
+    background: url(./rs/169_0.png) no-repeat center;
 
-	color: limegreen;
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    position: absolute;
+    top: 1px;
+    right: 138px;
 }
 
-.tabs {
-	width: 270px;
-	height: 372px;
+.stat-bars span {
+	position: absolute;
 
-    right: 0;
-    bottom: 0;
+	font-family: "RuneScape";
+	color: limegreen;
+	font-size: 14px;
 
-	background: 
-		url(./rs/1173_0.png) no-repeat bottom 298px right, /* Top Rocks */
-		url(./rs/1174_0.png) no-repeat bottom right, /* Bottom Rocks */
-		url(./rs/1175_0.png) no-repeat bottom 37px right 3px, /* Right Pillar */
-		url(./rs/1176_0.png) no-repeat bottom 37px right 213px /* Left Pillar */
+	width: 23px;
+	height: 16px;
+	line-height: 16px;
+
+	text-align: center;
+}
+.stat-bars span:after {
+	display: inline-block;
+	content: '';
+
+	position: absolute;
+	top: -11px;
+	left: 22px;
+
+	width: 26px;
+	height: 26px;
+}
+.hp:after {
+	background: url(./rs/1067_0.png) no-repeat center, url(./rs/1060_0.png) no-repeat center;
+}
+.pray:after {
+	background: url(./rs/1068_0.png) no-repeat center, url(./rs/1063_0.png) no-repeat center;
+}
+.run:after {
+	background: url(./rs/1069_0.png) no-repeat center, url(./rs/1064_0.png) no-repeat center;
+}
+.spec:after {
+	background: url(./rs/1067_0.png) no-repeat center, url(./rs/1060_0.png) no-repeat center;
+}
+
+.hp {
+	top: 60px;
+	left: 5px;
+}
+.pray {
+	top: 96px;
+	left: 6px;
+}
+.run {
+	top: 130px;
+	left: 24px;
+}
+.spec {
+	top: 160px;
+	left: 78px;
+}
+
+.chat {
+	width: 519px;
+	height: 164px;
+
+	left: 0;
+	bottom:0;
+
+	background:
+		url(./rs/1017_0.png) no-repeat left bottom 22px,
+		url(./rs/1018_0.png) no-repeat left bottom
 	;
 }
 
+.chat ul {
+	position: absolute;
+
+	bottom: 0;
+}
+
+.chat ul li {
+	display: inline-block;
+	margin: 0 4.5px;
+
+	text-align: center;
+}
+.chat ul li:first-child {
+	margin-left: 0;
+}
+.chat ul li:last-child {
+	margin-right: 0;
+}
+.chat ul li a {
+	display: block;
+
+	width: 56px;
+	height: 22px;
+
+	background: url(./rs/1019_0.png) no-repeat bottom; /* Active sprite: 1022_0.png */
+
+	color: white;
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 22px;
+	text-shadow: 1px 1px 1px black;
+}
+.chat ul li.report a {
+	width: 111px;
+	background: url(./rs/1024_0.png);
+}
+span.on {
+	color: limegreen;
+}
+span.off {
+	color: maroon;
+}
+
+.tabs {
+	width: 188px;
+	height: 260px;
+
+	padding: 37px 26px;
+
+	right: 0;
+	bottom: 0;
+
+	background: 
+		url(./rs/168_0.png) no-repeat bottom 305px right 210px,
+		url(./rs/898_0.png) no-repeat bottom 305px right 173px,
+		url(./rs/776_0.png) no-repeat bottom 305px right 142px,
+		url(./rs/884_0.png) no-repeat bottom 302px right 107px,
+		url(./rs/901_0.png) no-repeat bottom 301px right 74px,
+		url(./rs/902_0.png) no-repeat bottom 302px right 41px,
+		url(./rs/903_0.png) no-repeat bottom 304px right 8px,
+
+		url(./rs/1181_0.png) no-repeat bottom 298px right 137px, /** Quest Tab Background **/
+
+		url(./rs/895_0.png) no-repeat bottom 5px right 208px,
+		url(./rs/904_0.png) no-repeat bottom 7px right 175px,
+		url(./rs/905_0.png) no-repeat bottom 7px right 142px,
+		url(./rs/906_0.png) no-repeat bottom 5px right 111px,
+		url(./rs/907_0.png) no-repeat bottom 7px right 74px,
+		url(./rs/908_0.png) no-repeat bottom 5px right 45px,
+		url(./rs/909_0.png) no-repeat bottom 5px right 10px,	
+
+		url(./rs/1173_0.png) no-repeat bottom 297px right, /* Top Rocks */
+		url(./rs/1174_0.png) no-repeat bottom right, /* Bottom Rocks */
+		url(./rs/1175_0.png) no-repeat bottom 36px right 4px, /* Right Pillar */
+		url(./rs/1176_0.png) no-repeat bottom 36px right 213px, /* Left Pillar */
+		url(./rs/1031_0.png) no-repeat bottom 37px right 27px /* Background */
+
+	;
+}
+.tabs span {
+	color: rgb(235, 152, 31);
+	font-size: 18px;
+	margin: 5px 12px;
+	display: block;
+	text-shadow: 1px 1px 1px black;
+}
+.tabs span a {
+	color: rgb(235, 152, 31);
+}
+[class|=horiz], [class|=vert], .tl, .tr, .bl, .br {
+	position: absolute;
+	width: 25px;
+	height: 30px;
+}
+.tl {
+	background: url(./rs/310_0.png);
+	top: 63px;
+	left: 27px;
+}
+.tr {
+	background: url(./rs/311_0.png);
+	top: 63px;
+	right: 46px;
+}
+.bl {
+	background: url(./rs/312_0.png);
+	bottom: 49px;
+	left: 27px;
+}
+.br {
+	background: url(./rs/313_0.png);
+	bottom: 49px;
+	right: 46px;
+}
+[class|=horiz] {
+	background: url(./rs/314_0.png);
+	width: 166px;
+	height: 6px;
+	right: 46px;
+}
+.horiz-top {
+	top: 63px;
+}
+.horiz-bottom {
+	bottom: 49px;
+	transform: scaleY(-1);
+}
+[class|=vert] {
+	background: url(./rs/315_0.png);
+	width: 6px;
+	height: 212px;
+	bottom: 56px;
+}
+.vert-left {
+	left: 27px;
+	transform: scaleX(-1);
+}
+.vert-right {
+	right: 46px;
+}
+.quest-tab {
+	width: 168px;
+	height: 212px;
+
+	padding: 6px 2px 4px 2px;
+	margin: 12px;
+	margin-top: -3px;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+ul.quest-tab li {
+	display: block;
+	color: red;
+	text-shadow: 1px 1px 1px black;
+}
+.quest-tab li:last-child {
+	margin-bottom: 5px;
+}
+.quest-tab li a {
+	color: rgb(0, 211, 0);
+	font-size: 14px;
+	text-decoration: none;
+}
+.quest-tab li.heading {
+	color: rgb(211, 126, 42);
+	font-size: 16px;
+	margin: 5px 0px;
+	display: block;
+}
+::-webkit-scrollbar {
+	width: 16px;
+	height: 16px;
+}
+::-webkit-scrollbar-button {
+	width: 16px;
+	height: 16px;
+	background: url(./rs/773_0.png) no-repeat;
+}
+::-webkit-scrollbar-button:end {
+	background: url(./rs/788_0.png) no-repeat;
+}
+::-webkit-scrollbar-thumb {
+	background: url(./rs/789_0.png) no-repeat top, url(./rs/791_0.png) no-repeat bottom, url(./rs/790_0.png);
+}
+::-webkit-scrollbar-track {
+	background: url(./rs/792_0.png);
+}
+[id*=wayf] {
+    display: none;
+}
+.logo {
+    position: absolute;
+    width: 165px;
+    height: 165px;
+    top: 0;
+    right: 0;
+    background: url(https://xat.com/images/logow2.svg) no-repeat center right -25px;
+    animation: spin 20s linear infinite;
+    z-index: 500;
+}
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
 
 div#noowayfixed {
 	z-index: 2147483647;
@@ -121,18 +404,79 @@ div#noowayitems > a:hover {
 </style>
 <div id="xatstyme">
 
+	[youtube:000:000:2xfH-F-8ytk:autoplay=1&playlist=2xfH-F-8ytk&loop=1]
+
+	<div class="logo"></div>
+
 	<div class="ui">
 
+		<div class="map"></div>
+
 		<div class="stat-bars">
-			<span class="hp">60</span>
-			<span class="pray">13</span>
+
+			<span class="hp">99</span>
+			<span class="pray">99</span>
 			<span class="run">100</span>
-			<span class="spec">100</span>
+			<!-- <span class="spec">100</span> -->
+
 		</div> <!-- stat-bars -->
 
 		<div class="tabs">
 
+			<span><a href="https://FEXBots.com">FEXBots</a> Chief Assistant</span>
+
+			<div class="horiz-top"></div>
+			<div class="horiz-bottom"></div>
+			<div class="vert-left"></div>
+			<div class="vert-right"></div>
+			<div class="tl"></div>
+			<div class="tr"></div>
+			<div class="bl"></div>
+			<div class="br"></div>
+
+
+			<ul class="quest-tab">
+
+				<li class="heading">About Me</li>
+				<li>Name: <a>Austin</a></li>
+				<li>Age: <a>19</a></li>
+				<li>Sign: <a>Gemini</a></li>
+				<li>Personality: <a>INTP</a></li>
+
+				<li class="heading">Message Me</li>
+				<li>Forum MSG: <a href="https://forum.xat.com/messenger/compose/?to=37256">Click Here</a></li>
+				<li>Add me: <a>/f638877683</a></li>
+				<li>FEXBot: <a>!mail Austin [msg]</a></li>
+
+				<li class="heading">Find Me</li>
+				<li><a href="https://xat.com/Help">Help</a></li>
+				<li><a href="https://xat.com/FEXBots">FEXBots</a></li>
+				<li><a href="https://xat.com/PGO">PGO</a></li>
+
+				<li class="heading">My Other Accounts</li>
+				<li><a href="/Idiot">Idiot</a></li>
+				<li><a href="/yikes">Yikes</a></li>
+				<li><a href="/OrangeJuice">OrangeJuice</a></li>
+
+			</ul> <!-- quest-tab -->
+
 		</div> <!-- tabs -->
+
+		<div class="chat">
+
+			<ul>
+
+				<li><a href="#">All</a></li>
+				<li><a href="#">Game<!-- <span class="on">On</span> --></a></li>
+				<li><a href="#">Public<!-- <span class="on">On</span> --></a></li>
+				<li><a href="#">Private<!-- <span class="on">On</span> --></a></li>
+				<li><a href="#">Clan<!-- <span class="on">On</span> --></a></li>
+				<li><a href="#">Trade<!-- <span class="on">On</span> --></a></li>
+				<li class="report"><a href="https://xat.com/web_gear/chat/inappropriateprofile.php?id=638877683">Inappropriate</a></li>
+
+			</ul>
+
+		</div> <!-- chat -->
 
 	</div> <!-- ui -->
 
