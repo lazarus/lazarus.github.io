@@ -20,11 +20,13 @@ div#xatstyme {
 
 @font-face {
 	font-family: minecraft;
-	src: url('https:\/\/austinh115.github.io/minecraft.ttf');
+	/*src: url('https:\/\/austinh115.github.io/minecraft.ttf');*/
+	src: url('minecraft.ttf');
 }
 @font-face {
 	font-family: minecraftia;
-	src: url('https:\/\/austinh115.github.io/minecraftia.ttf');
+	/*src: url('https:\/\/austinh115.github.io/minecraftia.ttf');*/
+	src: url('minecraftia.ttf');
 }
 * {
 	margin: 0;
@@ -38,13 +40,23 @@ body {
 }
 .screen {
 	background:
-		/* url(https://i.imgur.com/fw9KR.png) no-repeat center fixed, */
-		url(http://www.lb-stuff.com/Minecraft/AwesomeView.png) no-repeat center fixed;
+		url(panorama.png) center/contain;
+		/*url(https://orig00.deviantart.net/db55/f/2014/339/a/0/minecraft_alpha_panorama_by_lockrikard-d4hxmb7.png);*/
 	position: absolute;
-	width: 100%;
+	width: calc(4608px * 2);
 	height: 100%;
 	z-index: -9999;
-	/* filter: blur(3px); */
+	animation: bg 50s linear infinite;
+}
+@keyframes bg {
+	0% {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		-webkit-transform: translate3d(-4608px, 0, 0);
+		transform:translate3d(-4608px, 0, 0);
+	}
 }
 .logo, .menu, .options {
 	text-align: center;
@@ -63,6 +75,7 @@ body {
 .options {
 	top: calc(50% + 156px + 70px);
 	left: calc(50% - 35px);
+	width: 100%;
 }
 .title {
 	font-family: minecraft;
@@ -215,6 +228,15 @@ body {
 [id*=yit] a:nth-child(-1n+7), [id*=yit] br {
 	display: none;
 }
+#chats, #profiles {
+	display: none;
+}
+#chats:target, #profiles:target {
+	display: block;
+}
+#chats:target ~ #nav, #profiles:target ~ #nav {
+	display: none;
+}
 
 div#noowayfixed {
 	z-index: 2147483647;
@@ -253,25 +275,43 @@ div#noowayitems > a:hover {
 <div id="xatstyme">
 
 	<div class="screen"></div> <!-- screen -->
-
+	<!-- [youtube:000:000:cjQQ9JYGgTM:autoplay=1&playlist=cjQQ9JYGgTM&loop=1] -->
 	<div class="logo">
 
 		<span class="title">austin</span>
 		<span class="subtitle"><a href="https://FEXBots.com">FEXBots</a> Chief Assistant!</span>
 
 	</div> <!-- logo -->
+	
+	<div class="menu" id="chats">
 
-	<div class="menu">
+			<li class="button"><a href="https://xat.com/Help">Help</a></li>
+			<li class="button"><a href="https://xat.com/FEXBots">FEXBots</a></li>
+			<li class="button"><a href="https://xat.com/PGO">PGO</a></li>
+			<li class="button"><a href="#">Back</a></li>
+
+	</div> <!-- .menu#chats -->
+	
+	<div class="menu" id="profiles">
+
+			<li class="button"><a href="/idiot">Idiot</a></li>
+			<li class="button"><a href="/yikes">Yikes</a></li>
+			<li class="button"><a href="/OrangeJuice">OrangeJuice</a></li>
+			<li class="button"><a href="#">Back</a></li>
+
+	</div> <!-- .menu#profiles -->
+
+	<div class="menu" id="nav">
 
 		<ul>
 
-			<li class="button"><a href="https://xat.com/FEXBots">FEXBots</a></li>
-			<li class="button"><a href="https://xat.com/PGO">PGO</a></li>
+			<li class="button"><a href="#chats">Find Me</a></li>
+			<li class="button"><a href="#profiles">My Accounts</a></li>
 			<li class="button"><a href="https://forum.xat.com/messenger/compose/?to=37256">Message</a></li>
 
 		</ul>
 
-	</div> <!-- menu -->
+	</div> <!-- .menu#nav -->
 
 	<div class="options">
 
@@ -279,7 +319,7 @@ div#noowayitems > a:hover {
 
 			<li class="icon"><a href="">&nbsp;</a></li>
 			<li class="button"><a href="https://xat.com/web_gear/chat/editprofile.php?email=Austin">Options...</a></li>
-			<li class="button"><a href="#">Quit Game</a></li>
+			<li class="button"><a href="https://xat.com">Quit Game</a></li>
 
 		</ul>
 
