@@ -158,25 +158,25 @@ body {
 	;
 }
 
-.chat ul {
+.chat ul.buttons {
 	position: absolute;
 
 	bottom: 0;
 }
 
-.chat ul li {
+.chat ul.buttons li {
 	display: inline-block;
-	margin: 0 4.5px;
+	margin: 0 3.5px;
 
 	text-align: center;
 }
-.chat ul li:first-child {
-	margin-left: 0;
+.chat ul.buttons li:first-child {
+	margin-left: 4.5px;
 }
-.chat ul li:last-child {
-	margin-right: 0;
+.chat ul.buttons li:last-child {
+	margin-right: 4.5px;
 }
-.chat ul li a {
+.chat ul.buttons li a {
 	display: block;
 
 	width: 56px;
@@ -190,7 +190,10 @@ body {
 	line-height: 22px;
 	text-shadow: 1px 1px 1px black;
 }
-.chat ul li.report a {
+.chat ul.buttons li a.active {
+	background: url(./rs/1022_0.png);
+}
+.chat ul.buttons li.report a {
 	width: 111px;
 	background: url(./rs/1024_0.png);
 }
@@ -199,6 +202,51 @@ span.on {
 }
 span.off {
 	color: maroon;
+}
+
+.chat .message-container {
+    width: 490px;
+    height: 111px;
+    margin-top: 6px;
+    padding: 4px 11px 0px 11px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+}
+.chat .message-container:after {
+	content: '';
+	position: fixed;
+	display: block;
+	width: 501px;
+	height: 1px;
+	background: rgb(135, 119, 100);
+	bottom: 42px;
+}
+.chat .message-container ul {
+	position: absolute;
+	bottom: 0;
+	max-height: 100%;
+}
+.chat .message-container ul td, .input-msg {
+	list-style: none;
+	color: blue;
+	vertical-align: top;
+	line-height: 14.4px;
+}
+.chat .message-container ul td span, .input-msg span {
+	white-space: nowrap;
+	color: black;
+}
+.chat .message-container ul td.clan {
+	color: maroon;
+}
+.chat .message-container input {
+	width: 0;
+	height: 0;
+	opacity: 0;
+}
+.chat .input-msg {
+	margin-left: 11px;
 }
 
 .tabs {
@@ -367,6 +415,9 @@ ul.quest-tab li {
 		transform: rotate(360deg);
 	}
 }
+iframe {
+	position: absolute;
+}
 
 div#noowayfixed {
 	z-index: 2147483647;
@@ -404,7 +455,7 @@ div#noowayitems > a:hover {
 </style>
 <div id="xatstyme">
 
-	[youtube:000:000:2xfH-F-8ytk:autoplay=1&playlist=2xfH-F-8ytk&loop=1]
+	<!-- [youtube:000:000:2xfH-F-8ytk:autoplay=1&playlist=2xfH-F-8ytk&loop=1] -->
 
 	<div class="logo"></div>
 
@@ -464,9 +515,40 @@ div#noowayitems > a:hover {
 
 		<div class="chat">
 
-			<ul>
+			<div class="message-container">
 
-				<li><a href="#">All</a></li>
+				<ul>
+
+					<table cellspacing="0">
+						<tr>
+							<td><span>[</span>Philosophers<span>] Edward Elric:</span>&nbsp;</td>
+							<td class="clan">Humankind cannot gain anything without first giving something in return. To obtain, something of equal value must be lost. That is alchemy's first law of equivalent exchange.</td>
+						</tr>
+					</table>
+
+					<table cellspacing="0">
+						<tr>
+							<td><span>[</span>Philosophers<span>] Nietzsche:</span>&nbsp;</td>
+							<td class="clan">What can everyone do? Praise and blame.</td>
+						</tr>
+					</table>
+
+					<table cellspacing="0">
+						<tr>
+							<td><span>Austin:</span>&nbsp;</td>
+							<td>Let justice be done though the heavens fall.<input autofocus></td>
+						</tr>
+					</table>
+
+				</ul>
+
+			</div> <!-- message-container -->
+
+			<div class="input-msg"><span>Austin:</span> yeet lol*</div>
+
+			<ul class="buttons">
+
+				<li><a href="#" class="active">All</a></li>
 				<li><a href="#">Game<!-- <span class="on">On</span> --></a></li>
 				<li><a href="#">Public<!-- <span class="on">On</span> --></a></li>
 				<li><a href="#">Private<!-- <span class="on">On</span> --></a></li>
@@ -474,7 +556,7 @@ div#noowayitems > a:hover {
 				<li><a href="#">Trade<!-- <span class="on">On</span> --></a></li>
 				<li class="report"><a href="https://xat.com/web_gear/chat/inappropriateprofile.php?id=638877683">Inappropriate</a></li>
 
-			</ul>
+			</ul> <!-- buttons -->
 
 		</div> <!-- chat -->
 
