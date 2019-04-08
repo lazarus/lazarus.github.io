@@ -1,0 +1,499 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>xat online chat. Profile for Austin</title>
+<LINK REL="SHORTCUT ICON" href="https://xat.com/web_gear/chat/icon.ico">
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+body {
+	/*padding:0px;
+	margin: 0px 0px 0px 0px;*/
+	FONT-SIZE: 12pt;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+div#xatstyme {
+	background:#0;
+	color: #00; 
+	overflow: auto;
+}
+body {background: white;}
+/** CSS By Austin (638877683) **/
+body {
+	margin: 0;
+	font-size: 12px;
+	font-family: "Montserrat","Helvetica Neue",helvetica,arial,sans-serif;
+	line-height: 180%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	color: #000;
+	overflow: hidden;
+}
+
+@font-face {
+	font-family: bpreplay;
+	src: url('https:\/\/austinh115.github.io/BPreplayBoldItalics.ttf');
+	/*src: url('BPreplayBoldItalics.ttf');*/
+}
+
+*{padding:0;margin:0;}
+
+/**/
+
+.kahoot {
+	width: 100vw;
+	height: 100vh;
+	display: block;
+	overflow: hidden;
+}
+
+.header {
+	height: 10vh;
+	width: 100%;
+	background: white;
+	border-bottom: 3px solid #d9d9d9;
+}
+
+.title {
+	font-size: 56px;
+	text-align: center;
+	line-height: 10vh;
+}
+
+.question-big .title {
+	font-family: bpreplay;
+	font-weight: bold;
+}
+
+.fullscreen {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 10vh;
+}
+
+.screen {
+	display: block;
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+}
+
+.timer {
+	height: 20px;
+	background: #ccc;
+	position: absolute;
+	top: calc(10vh + 3px);
+	width: 100%;
+}
+
+.timer::after {
+	content: '';
+	display: block;
+	background: rgb(114, 51, 178);
+	width: 0px;
+	height: 100%;
+	animation: timer forwards 5s linear;
+}
+
+@keyframes timer {
+	0% {
+		width: 0px;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+.question-big h1 {
+	display: block;
+	line-height: 80vh;
+	width: 100%;
+	text-align: center;
+	font-size: 64px;
+	font-weight: normal;
+}
+
+.footer {
+	display: block;
+	height: 10vh;
+	width: 100%;
+	background: rgb(19, 104, 206);
+	color: white;
+	font-size: 28px;
+	text-align: center;
+	line-height: 10vh;
+}
+
+.question-mini, .results {
+	opacity: 0;
+	top: 0;
+	position: absolute;
+}
+
+.question-big {
+	animation: hidebig 0s forwards steps(2, end);
+	animation-delay: 5s;
+
+	display: block;
+	opacity: 1;
+	z-index: 999;
+}
+.question-mini {
+	animation: showmini 0s forwards steps(2, end), hidemini 0s forwards steps(2, end);
+	animation-delay: 5s, 25s;
+
+	background: rgb(242, 242, 242);
+
+	display: block;
+	width: 100%;
+	z-index: 998;
+}
+.results {
+	animation: showresult 0s forwards steps(2, end);
+	animation-delay: 25s;
+
+	width: 100%;
+	height: 100%;
+
+	background: rgb(255, 51, 85);
+
+	color: white;
+
+	text-align: center;
+
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 997;
+}
+/*h1 img span span*/
+.results h1 {
+	font-family: bpreplay;
+	font-size: 2rem;
+    margin: 0 0 1rem;
+    line-height: normal;
+}
+.results .img {
+	background: url('https:\/\/austinh115.github.io/icn_incorrect.svg') center/contain no-repeat;
+    height: 4.5rem;
+    margin: 0 0 1.5rem;
+}
+.results .msg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .625rem;
+    background-color: rgba(0,0,0,.15);
+	overflow: hidden;
+    position: relative;
+    margin: 0 auto 1rem;
+    min-height: 3.875rem;
+    width: 300px;
+    font-size: 1.25rem;
+    line-height: 1.25;
+}
+.results .place {
+    width: 100%;
+    font-size: 1rem;
+    letter-spacing: .025rem;
+    line-height: 1.5;
+    margin-top: 7.5rem;
+    display: block;
+}
+
+@keyframes hidebig {
+	100% {opacity: 0;display:none;}
+}
+
+@keyframes showmini {
+	100% {opacity: 1}
+}
+
+@keyframes hidemini {
+	100% {opacity: 0;display:none;}
+}
+
+@keyframes showresult {
+	100% {opacity: 1}
+}
+
+.countdown, .finished {
+    position: absolute;
+    top: 25vh;
+    height: 120px;
+    width: 120px;
+    margin-top: calc(40px);
+    line-height: 120px;
+    text-align: center;
+    display: block;
+    font-family: bpreplay;
+    font-size: 54px;
+}
+
+.content {
+	height: 50vh;
+	width: 100%;
+}
+
+.content img {
+	margin: 0 auto;
+	display: block;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@keyframes countdown {
+	0% {content:'20'}
+	5% {content:'19'}
+	10% {content:'18'}
+	15% {content:'17'}
+	20% {content:'16'}
+	25% {content:'15'}
+	30% {content:'14'}
+	35% {content:'13'}
+	40% {content:'12'}
+	45% {content:'11'}
+	50% {content:'10'}
+	55% {content:'9'}
+	60% {content:'8'}
+	65% {content:'7'}
+	70% {content:'6'}
+	75% {content:'5'}
+	80% {content:'4'}
+	85% {content:'3'}
+	90% {content:'2'}
+	95% {content:'1'}
+	100% {content:'0'}
+}
+
+.countdown {
+	left: 3%;
+	background: rgb(134, 76, 191);
+	border-radius: 50%;
+	color: white;
+}
+.countdown::after {
+	display: block;
+	content: '';
+	animation: countdown 20s forwards linear;
+	animation-delay: 5s;
+}
+
+.finished {
+	right: 3%;
+}
+
+.finished span {
+    font-size: 22px;
+    margin-top: -80px;
+    display: block;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    height: 40vh;
+    border: 10px;
+    border-top: 0;
+    border-style: solid;
+    border-color: transparent;
+    box-sizing: border-box;
+}
+
+.option {
+	color: white;
+	text-shadow: 0px 0px 1px black;
+	font-size: 27px;
+	border-radius: 3px;
+	display: grid;
+	padding: 1em;
+}
+
+.option span {
+	align-self: center;
+	justify-self: left;
+}
+
+.option:nth-child(1) {background: #e21b3c}
+.option:nth-child(2) {background: #1368ce}
+.option:nth-child(3) {background: #d89e00}
+.option:nth-child(4) {background: #298f0d}
+
+.option:nth-child(1):hover {background: #c01733}
+.option:nth-child(2):hover {background: #1058af}
+.option:nth-child(3):hover {background: #b88600}
+.option:nth-child(4):hover {background: #237a0b}
+
+iframe {
+	position: fixed;
+	top: -500px;
+	left: -500px;
+}
+::selection {
+	background: transparent;
+}   
+
+/**/
+
+[id*=ayf]{top:5vh;height:50px;margin-top:-25px;margin-left:5px;}
+
+*{;}
+div#noowayfixed {
+	z-index: 2147483647;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+div#noowaymenu
+{
+	background-color:#009;
+	background: linear-gradient(#000014, #000024, #00004e);
+	border-radius: 0px 5px 0px 0px;
+	display: none;
+	FONT-SIZE: 12pt;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+div#noowayitems
+{
+	padding-top: 5px;
+	padding-right: 0px;
+	/*padding-bottom: 5px;*/
+	padding-left: 0px;
+	margin-left: 6px;
+	line-height: 130%;
+	color:#fff;
+}
+div#noowayitems > a
+{
+	color:#fff;
+	text-decoration: none;
+}
+div#noowayitems > a:hover {
+	text-decoration: underline;
+}
+</style>
+<div id="xatstyme">
+
+<!-- Start -->
+
+	<div class="kahoot">
+
+		<div class="screen">
+
+			<div class="question-big">
+
+				<div class="header">
+
+					<div class="title">Question 1 of 10</div> <!-- title -->
+
+					<div class="timer"></div> <!-- timer -->
+
+				</div> <!-- header -->
+
+
+				<h1>Why is Austin so amazing?</h1>
+
+				<span class="footer">Win up to <b>1,000</b> points!</span> <!-- footer-->
+
+			</div> <!-- question-big -->
+
+
+			<div class="question-mini">
+
+				<div class="header">
+
+					<div class="title">Why is Austin so amazing?</div> <!-- title -->
+
+				</div> <!-- header -->
+
+
+				<div class="content">
+				
+					<span class="countdown"></span> <!-- countdown -->
+
+					<img src="https://i.postimg.cc/ydNgcBft/tumblr-ojgnetvp-Bu1u80dlxo1-400.jpg" /> <!-- Question image -->
+
+					<span class="finished">0<br /><span>Answers</span></span> <!-- finished -->
+
+				</div> <!-- content -->
+
+
+				<div class="options">
+
+					<div class="option"><span>That's just the way it is</span></div>
+					<div class="option"><span>That's just the way it is</span></div>
+					<div class="option"><span>That's just the way it is</span></div>
+					<div class="option"><span>That's just the way it is</span></div>
+
+				</div> <!-- options -->
+
+			</div> <!-- question-mini -->
+
+
+			<div class="results">
+
+				<div class="container">
+
+					<h1>Incorrect</h1>
+
+					<div class="img"></div>
+
+					<span class="msg">You meant the other one, right?!</span>
+
+					<span class="place">You're in <b>1st place</b></span>
+
+				</div>
+
+			</div> <!-- results -->
+
+		</div> <!-- screen -->
+
+	</div> <!-- kahoot -->
+
+	<!-- 8YGlzSl6cxU -->
+	[youtube:350:197:8YGlzSl6cxU:autoplay=1&playlist=8YGlzSl6cxU&loop=1&showinfo=0&rel=0&modestbranding=1]
+
+<!-- End -->
+
+</div>
+<div onmouseover="showMenu(this)" onmouseout="hideMenu(this)" id="noowayfixed">
+  <img id="noowayplanet" src="https://xat.com/images/logow2.svg">
+  <div id="noowaymenu">
+	<div id="noowayitems">
+<a href="https://xat.com">xat</a><br>
+<a href="https://xat.com/web_gear/chat/editprofile.php?email=Austin">Edit</A><br>
+
+<A href="https://xat.com/wiki">Wiki (help)</A><br> 
+<A href="https://forum.xat.com/">Forum</A><br>
+<A href="https://xat.com/privacy.html">Privacy</A><br>
+<A href="https://xat.com/terms.html">Terms</A><br>
+<A href="https://xat.com/safety.html">Safety</A><br>
+
+<A href="https://xat.com/web_gear/chat/inappropriateprofile.php?id=638877683">Inappropriate&#x1F44E;</A><br>
+&copy;2019 xat<br>
+
+	</div>
+	<a href="https://xat.com"><img src="https://xat.com/images/logow.svg"></a>
+  </div>
+</div>
+
+<script>
+function showMenu(x) {
+	document.getElementById("noowaymenu").style.display = "block";
+	document.getElementById("noowayplanet").style.display = "none";
+}
+
+function hideMenu(x) {
+	document.getElementById("noowaymenu").style.display = "none";
+	document.getElementById("noowayplanet").style.display = "block";
+}
+</script>
+</head>
+<body>
