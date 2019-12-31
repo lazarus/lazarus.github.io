@@ -1,0 +1,547 @@
+@font-face { font-family: "consolas-alt"; src: url('https://dl.dropbox.com/s/xap6ylki7bf2vgw/consolas.ttf'); }
+
+@font-face { font-family: "sdv"; src: url('https://dl.dropbox.com/s/sd30f5z9zg7189q/stardew-valley.ttf'); }
+
+@font-face { font-family: "aseprite"; src: url('https://dl.dropbox.com/s/9qnb0hkhcg0u57v/AsepriteFont.ttf'); }
+ 
+/*--------------------TOOLTIPS--------------------*/
+#s-m-t-tooltip {
+    margin:22px;
+    padding:1px 10px 3px 10px;
+    background-image:linear-gradient(to bottom, var(--TextBox-Background-Gradient-1), var(--TextBox-Background-Gradient-2));
+    border-style:ridge;
+    border-width:var(--TextBox-Border-Size);
+    border-top-color:var(--TextBox-Border-Main-1);
+    border-right-color:var(--TextBox-Border-Medium-2);
+    border-bottom-color:var(--TextBox-Border-Medium-1);
+    border-left-color:var(--TextBox-Border-Main-2);
+    font-family:aseprite;
+    font-size:19px;
+    letter-spacing:0.3px;
+    color:var(--TextBox-Text-Color);
+    text-shadow:-1px 1px 1px var(--TextBox-Text-Shadow);
+    line-height:1.3em;
+    z-index:99;
+    max-width:36vw;
+}
+ 
+/*--------------------TUMBLR CONTROLS--------------------*/
+iframe#tumblr_controls, .iframe-controls--desktop {
+    top:5px!important;
+    right:5px!important;
+    position:fixed!important;
+    
+    transform:scale(0.7,0.7);
+    -webkit-transform:scale(0.7,0.7);
+    -moz-transform:scale(0.7,0.7);
+    -o-transform:scale(0.7,0.7);
+    -ms-transform:scale(0.7,0.7);
+    
+    transform-origin:100% 0;
+    -webkit-transform-origin:100% 0;
+    -moz-transform-origin:100% 0;
+    -o-transform-origin:100% 0;
+    -ms-transform-origin:100% 0;
+    z-index:999999!important;
+}
+ 
+/*--------------------TEXT HIGHLIGHT--------------------*/
+::selection {
+background:#BBD3FD;
+}
+ 
+::-moz-selection {
+background:#BBD3FD;
+}
+ 
+/*--------------------BASICS--------------------*/
+body {
+    background:#F5E8D8 url('https://66.media.tumblr.com/tumblr_lzju29VxIR1r9g6hvo1_250.png');
+    background-attachment:fixed;
+    background-repeat:repeat;
+    color:#000;
+    cursor:normal;
+    font-family:consolas-alt;
+    line-height:1.6em;
+    font-size:12px;
+    text-align:left;
+}
+
+body {
+    cursor: url("https://dl.dropbox.com/s/leumlg240sp779u/Stardew-Valley-Cursor.png"), auto;
+}
+
+a, .music-controls {
+    cursor: url("https://dl.dropbox.com/s/15utsnutkj0mszj/Stardew-Valley-Hand.png"), auto;
+}
+
+a[title]:not([href]) {
+    cursor: url("https://dl.dropbox.com/s/8wtpihkmb6aqlhp/Stardew-Valley-Cursor-Help.png"), auto;
+}
+ 
+blockquote {
+    padding-left:10px;
+    margin-left:5px;
+    border-left:1px solid;
+    border-color:var(--TextBox-Text-Color);
+    margin:10px;
+}
+
+a {
+    color:var(--TextBox-Link-Color);
+    text-decoration:none;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+}
+
+b, strong {
+    font-weight:bold;
+}
+
+i, em {color:;}
+
+pre, code {
+    white-space:pre-wrap;
+    display:block;
+}
+
+hr {
+    width:70%;
+    border-width:0px;
+    height:1px;
+    background-color:var(--TextBox-Text-Color);
+}
+
+img, span {vertical-align:middle;}
+
+/*---------- COLORS & POSITIONING ---------- */
+:root {
+    /* ----- NAV LINKS ----- */
+    --Nav-Links-Top-Position:30px;
+    --Nav-Links-Left-Position:30px;
+    --Nav-Links-Background:#dc7b05;
+    --Nav-Links-Border-Dark:#5b2b2a;
+    --Nav-Links-Border-Medium-1:#853605;
+    --Nav-Links-Border-Medium-2:#b14e05;
+    --Nav-Links-Border-Light:#f7ba00;
+    --Nav-Links-Border-Size:2px;
+    --Nav-Links-Icon-Size:25px;
+    --Nav-Links-Icon-Color:#5b2b2a;
+    --Nav-Links-Icon-Padding:3px;
+    --Nav-Links-Gap:9px;
+    
+    /* ----- MAIN GRID ----- */
+    --Main-Grid-Gaps-Vertical:14px;
+    --Main-Grid-Gaps-Sides:20px;
+    
+    /* ----- BOXES ----- */
+    --Left-TextBoxes-Width:388px;
+    --TextBox-Border-Main-1:#fb9e00;
+    --TextBox-Border-Main-2:#e08700;
+    --TextBox-Border-Dark:#5b2b2a;
+    --TextBox-Border-Medium-1:#903e01;
+    --TextBox-Border-Medium-2:#ba5901;
+    --TextBox-Border-Light:#f7ba00;
+    --TextBox-Border-Shadow:#cb8652;
+    --TextBox-Border-Size:3px;
+    --TextBox-Background:#ffcd82;
+    --TextBox-Background-Gradient-1:#ffcd82;
+    --TextBox-Background-Gradient-2:#eeb272;
+    --TextBox-Text-Vertical-Padding:12px;
+    --TextBox-Text-Side-Padding:15px;
+    --TextBox-Text-Color:#000;
+    --TextBox-Text-Shadow:#d7864f;
+    --TextBox-Link-Color:#a5682a;
+    
+    /* ----- TITLE BOX ----- */
+    --TitleBox-Text-Font-Size:18px;
+    --TitleBox-Text-Line-Height:1em;
+    
+    /* ----- BIO BOX ----- */
+    --Bio-Box-Font-Size:21px;
+    --Bio-Box-Line-Height:1.1em;
+    --Bio-Box-Maximum-Height:auto;
+    --Scrollbar-Thumb:transparent;
+    
+    /* ----- SIDEBAR BOXES ----- */
+    --Sidebar-Width:120px;
+    --Music-Controls-Size:12px;
+    --Music-Title-Font-Size:15px;
+    --Sidebar-Image-Width:85px;
+    --Desc-Box-Font-Size:17px;
+    --Desc-Box-Line-Height:1.25em;
+    
+    /* ----- CUSTOM LINKS ----- */
+    --Custom-Links-Box-Width:552px;
+    --Custom-Links-Icons-Size:40px;
+    --Custom-Links-Icons-Padding:6px;
+    
+    /* ----- STATUS TAB ----- */
+    --StatusTab-Bottom-Position:25px;
+   --StatusTab-Left-Position:25px;
+
+   --StatusTab-Borders-Size:3px; /* looks best with 3px-5px */
+   --StatusTab-Border-Dark:#5b2c26;
+   --StatusTab-Border-Medium:#b24d05;
+   --StatusTab-Border-Light:#db7c0e;
+   --StatusTab-Border-Shadow:#d7864f;
+
+   --StatusTab-Icon-Background:#ffd285;
+   --StatusTab-Icon-Border:#fff0ba;
+   --StatusTab-Image-Padding:5px;
+   --StatusTab-Image-Size:39px;
+   --StatusTab-Image-URL: https://stardewvalleywiki.com/mediawiki/images/9/9d/Cranberry_Candy.png;
+
+   --StatusTab-Text-Background:#ffd285;
+   --StatusTab-Font-Size:16px;
+   --StatusTab-Text-Color:#000;
+   --StatusTab-Text-Shadow:#d7864f;
+   --StatusTab-Text:Cranberry Candy;
+    
+    /* ----- ENERGY BAR ----- */
+    --EnergyBar-Bottom-Position:25px;
+    --EnergyBar-Right-Position:25px;
+    --EnergyBar-Border-Main:#dc7b05;
+    --EnergyBar-Border-Dark:#5b2b2a;
+    --EnergyBar-Border-Medium-1:#853605;
+    --EnergyBar-Border-Medium-2:#b14e05;
+    --EnergyBar-Border-Light:#f7ba00;
+    --EnergyBar-Border-Shadow:#D7864F;
+    --EnergyBar-Border-Size:2.5px;
+    --EnergyBar-Icon-Size:20px;
+    --EnergyBar-Icon-Padding:0px;
+    --EnergyBar-Maximum-Height:155px;
+    --EnergyBar-Width:15px;
+    --EnergyBar-Bar-Empty:#ffd782;
+    --EnergyBar-Bar-Line:#B4730C;
+    --EnergyBar-Bar-Fill:#FCA907;
+    --EnergyBar-Fill-Meter:36%;
+}
+
+/*---------- NAVLINKS ---------- */
+#navlinks {
+    position:fixed;
+    top:0;margin-top:var(--Nav-Links-Top-Position);
+    left:0;margin-left:var(--Nav-Links-Top-Position);
+    z-index:2;
+}
+
+.navlink {
+    margin-bottom:var(--Nav-Links-Gap);
+}
+
+.navlink a {
+    display:inline-block;
+    width:100%;
+    height:100%;
+}
+
+.imgwarp {
+    width:calc(var(--Nav-Links-Icon-Size) + (var(--Nav-Links-Border-Size) * 4));
+    height:var(--Nav-Links-Icon-Size);
+    background:var(--Nav-Links-Background);
+    border-left:var(--Nav-Links-Border-Size) solid var(--Nav-Links-Border-Dark);
+    border-right:var(--Nav-Links-Border-Size) solid var(--Nav-Links-Border-Dark);
+    text-align:center;
+}
+
+.navicon.svg {
+    display:inline-block;
+    width:var(--Nav-Links-Icon-Size);
+    height:var(--Nav-Links-Icon-Size);
+    padding:var(--Nav-Links-Icon-Padding);
+    box-sizing:border-box;
+   -webkit-box-sizing:border-box;
+   -moz-box-sizing:border-box;
+   -ms-box-sizing:border-box;
+   -o-box-sizing:border-box;
+   text-align:center;
+}
+
+.navicon svg {
+    fill:var(--Nav-Links-Icon-Color);
+    width:100%;
+    height:100%;
+}
+
+.navicon-theme svg {
+    filter:brightness(65%);
+    -webkit-filter:brightness(65%);
+}
+
+.navicon.img img {
+    width:var(--Nav-Links-Icon-Size);
+    height:var(--Nav-Links-Icon-Size);
+    padding:var(--Nav-Links-Icon-Padding);
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+}
+
+/*---------- STATUS TAB ---------- */
+#status-tab {
+    position:fixed;
+    bottom:0;margin-bottom:var(--StatusTab-Bottom-Position);
+    left:0;margin-left:var(--StatusTab-Left-Position);
+    display:flex;
+    align-items:center;
+}
+
+.icon-image {
+    width:var(--StatusTab-Image-Size);
+    height:var(--StatusTab-Image-Size);
+    padding:var(--StatusTab-Image-Padding);
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+}
+
+.the-text {
+    margin-top:-2px; /* text top gap offset */
+    line-height:1.2em;
+    font-family:sdv;
+    font-size:var(--StatusTab-Font-Size);
+    letter-spacing:0.7px;
+    text-shadow:-1px 1px 1px var(--StatusTab-Text-Shadow);
+    color:var(--StatusTab-Text-Color);
+}
+
+/*---------- ENERGY BAR ---------- */
+#energybar {
+    position:fixed;
+    bottom:0;margin-bottom:var(--EnergyBar-Bottom-Position);
+    right:0;margin-right:var(--EnergyBar-Right-Position);
+    z-index:2;
+}
+
+.energyicon {
+    margin-top:calc(var(--EnergyBar-Border-Size) * -0.75);
+}
+
+.energyicon.img img {
+    width:var(--EnergyBar-Icon-Size);
+    height:var(--EnergyBar-Icon-Size);
+    padding:var(--EnergyBar-Icon-Padding);
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+}
+
+.energyicon.svg {
+    display:inline-block;
+    width:var(--EnergyBar-Icon-Size);
+    height:var(--EnergyBar-Icon-Size);
+    padding:var(--EnergyBar-Icon-Padding);
+    box-sizing:border-box;
+   -webkit-box-sizing:border-box;
+   -moz-box-sizing:border-box;
+   -ms-box-sizing:border-box;
+   -o-box-sizing:border-box;
+   text-align:center;
+}
+
+.energyicon svg {
+}
+
+.energybar-fill {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:var(--EnergyBar-Fill-Meter);
+    background:var(--EnergyBar-Bar-Fill);
+    border-top:var(--EnergyBar-Border-Size) solid var(--EnergyBar-Bar-Line);
+}
+
+/*---------- BOXES ---------- */
+.hholder {
+    background-image:linear-gradient(to bottom, var(--TextBox-Background-Gradient-1), var(--TextBox-Background-Gradient-2));
+    border-right:calc(var(--TextBox-Border-Size) * 2) solid var(--TextBox-Border-Shadow);
+}
+
+.box-text {
+   margin-top:-3px; /* text top gap offset */
+   width:100%;
+   padding:var(--TextBox-Text-Vertical-Padding) var(--TextBox-Text-Side-Padding);
+   color:var(--TextBox-Text-Color);
+   text-shadow:-1px 1px 1px var(--TextBox-Text-Shadow);
+   box-sizing:border-box;
+   -webkit-box-sizing:border-box;
+   -moz-box-sizing:border-box;
+   -ms-box-sizing:border-box;
+   -o-box-sizing:border-box;
+}
+
+.title-box .intro-img {
+    margin-top:-2.5px;
+    margin-right:calc(var(--TextBox-Text-Side-Padding) * 0.75);
+    max-height:23px;
+}
+
+.title-box .box-text {
+    font-family:sdv;
+    letter-spacing:0.7px;
+    font-size:var(--TitleBox-Text-Font-Size);
+    line-height:var(--TitleBox-Line-Height);
+}
+
+.box-text a {
+    color:var(--TextBox-Link-Color);
+}
+
+.box-text li {
+    list-style-image:url("https://dl.dropbox.com/s/9xij6svawh373yj/GentleLark_Feather.png");
+}
+
+.box-text li > span {
+    display:inline-block;
+    margin-left:3px;
+    vertical-align:top;
+    margin-top:-4px;
+}
+
+/*---------- BIO BOX ---------- */
+.bio-box .box-text {
+    margin-top:0px;
+    font-family:aseprite;
+    font-size:var(--Bio-Box-Font-Size);
+    letter-spacing:0.3px;
+    line-height:var(--Bio-Box-Line-Height);
+    max-height:var(--Bio-Box-Maximum-Height);
+    overflow-y:auto;
+    height:0;
+    visibility:hidden;
+}
+
+.bio-box .box-text::-webkit-scrollbar {
+    width:var(--TextBox-Border-Size);
+    height:var(--TextBox-Border-Size);
+    background-color:var(--Scrollbar-Background);
+}
+ 
+.bio-box .box-text::-webkit-scrollbar-thumb {
+    background-color:var(--Scrollbar-Thumb);
+}
+
+.divider {
+    display:table;
+    margin:10px auto;
+}
+
+.divider img {
+    margin-top:3px;
+}
+
+/*---------- SIDEBAR BOXES ---------- */
+/*---------- MUSIC BOX ---------- */
+.musicrack {
+    display:flex;
+    align-items:center;
+}
+
+.music-controls {
+   width:var(--Music-Controls-Size);
+   overflow:hidden;
+}
+
+.music-controls svg {
+   width:var(--Music-Controls-Size);
+   height:var(--Music-Controls-Size);
+   color:var(--TextBox-Text-Color);
+   stroke-width:1.5px;
+}
+
+.pausee {display:none;}
+
+.beff {display:none;}
+.aff {display:block;}
+
+.music-title {
+   margin-left:6px;
+   font-size:var(--Music-Title-Font-Size);
+   color:var(--TextBox-Text-Color);
+}
+
+/*---------- SIDEBAR IMAGE ---------- */
+.sidebar-image-box {
+    margin:var(--Main-Grid-Gaps-Vertical) auto;
+}
+
+.imgcont {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:calc(var(--Sidebar-Width) - (var(--TextBox-Border-Size) * 2));
+}
+
+.sidebar-image {
+    width:var(--Sidebar-Image-Width);
+}
+
+/*---------- DESC BOX ---------- */
+.desc-box .box-text {
+    font-family:sdv;
+    letter-spacing:0.7px;
+    font-size:var(--Desc-Box-Font-Size);
+    line-height:var(--Desc-Box-Line-Height);
+    text-align:center;
+}
+
+/*---------- CUSTOM LINKS ---------- */
+.links-box {
+    margin-top:var(--Main-Grid-Gaps-Vertical);
+}
+
+.links-box .confusion::after {
+    content:"";
+    position:absolute;
+    margin-top:var(--TextBox-Border-Size);
+    right:0;margin-right:calc(var(--TextBox-Border-Size) * 2);
+    width:var(--TextBox-Border-Size);
+    height:var(--TextBox-Border-Size);
+    background:var(--TextBox-Border-Shadow);
+    z-index:3;
+}
+
+.wine {
+    margin-top:calc(var(--TextBox-Border-Size) * -1);
+    flex-wrap:wrap;
+    width:calc(100% + (var(--TextBox-Border-Size) * 2));
+}
+
+.tofu {
+    position:relative;
+    width:var(--Custom-Links-Icons-Size);
+    height:var(--Custom-Links-Icons-Size);
+    border-style:ridge;
+    border-width:var(--TextBox-Border-Size);
+    border-top-color:transparent;
+    border-right-color:var(--TextBox-Border-Shadow);
+    border-bottom-color:var(--TextBox-Border-Main-1);
+    border-left-color:transparent;
+}
+
+.tofu a {
+    display:inline-block;
+    width:100%;
+    height:100%;
+}
+
+.tofu-img {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-left:calc(var(--TextBox-Border-Size) * -1);
+}
+
+.customlink-image {
+    width:100%;
+    padding:var(--Custom-Links-Icons-Padding);
+    box-sizing:border-box;
+}
