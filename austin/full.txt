@@ -1,0 +1,1684 @@
+<style> 
+@font-face { font-family: "consolas-alt"; src: url('https://austinh115.github.io/austin/s/xap6ylki7bf2vgw/consolas.ttf?1'); }
+
+@font-face { font-family: "sdv"; src: url('https://austinh115.github.io/austin/s/sd30f5z9zg7189q/stardew-valley.ttf?1'); }
+
+@font-face { font-family: "aseprite"; src: url('https://austinh115.github.io/austin/s/9qnb0hkhcg0u57v/AsepriteFont.ttf?1'); }
+ 
+/*--------------------TOOLTIPS--------------------*/
+#s-m-t-tooltip {
+    margin:22px;
+    padding:1px 10px 3px 10px;
+    background-image:linear-gradient(to bottom, var(--TB-BG-Gradient-1), var(--TB-BG-Gradient-2));
+    border-style:ridge;
+    border-width:var(--TBB-Size);
+    border-top-color:var(--TBBM1);
+    border-right-color:var(--TBB-Medium-2);
+    border-bottom-color:var(--TBB-Medium-1);
+    border-left-color:var(--TBBM2);
+    font-family:aseprite;
+    font-size:19px;
+    letter-spacing:0.3px;
+    color:var(--TB-Text-Color);
+    text-shadow:-1px 1px 1px var(--TB-Text-Shadow);
+    line-height:1.3em;
+    z-index:99;
+    max-width:36vw;
+}
+ 
+/*--------------------TUMBLR CONTROLS--------------------*/
+iframe#tumblr_controls, .iframe-controls--desktop {
+    top:5px!important;
+    right:5px!important;
+    position:fixed!important;
+    
+    transform:scale(0.7,0.7);
+    -webkit-transform:scale(0.7,0.7);
+    -moz-transform:scale(0.7,0.7);
+    -o-transform:scale(0.7,0.7);
+    -ms-transform:scale(0.7,0.7);
+    
+    transform-origin:100% 0;
+    -webkit-transform-origin:100% 0;
+    -moz-transform-origin:100% 0;
+    -o-transform-origin:100% 0;
+    -ms-transform-origin:100% 0;
+    z-index:999999!important;
+}
+ 
+/*--------------------TEXT HIGHLIGHT--------------------*/
+::selection {
+background:#BBD3FD;
+}
+ 
+::-moz-selection {
+background:#BBD3FD;
+}
+ 
+/*--------------------BASICS--------------------*/
+body {
+    background:#F5E8D8 url('https://i.postimg.cc/DzB06bg7/tumblr-lzju29-Vx-IR1r9g6hvo1-250.png');
+    background-attachment:fixed;
+    background-repeat:repeat;
+    color:#000;
+    cursor:normal;
+    font-family:consolas-alt;
+    line-height:1.6em;
+    font-size:12px;
+    text-align:left;
+}
+
+body {
+    cursor: url("https://i.postimg.cc/sgCMgzxC/Stardew-Valley-Cursor.png"), auto;
+}
+
+a, .music-controls {
+    cursor: url("https://i.postimg.cc/QMXVcqc6/Stardew-Valley-Hand.png"), auto;
+}
+
+a[title]:not([href]) {
+    cursor: url("https://i.postimg.cc/XYKpZPBG/Stardew-Valley-Cursor-Help.png"), auto;
+}
+ 
+blockquote {
+    padding-left:10px;
+    margin-left:5px;
+    border-left:1px solid;
+    border-color:var(--TB-Text-Color);
+    margin:10px;
+}
+
+a {
+    color:var(--TB-Link-Color);
+    text-decoration:none;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+}
+
+b, strong {
+    font-weight:bold;
+}
+
+i, em {color:;}
+
+pre, code {
+    white-space:pre-wrap;
+    display:block;
+}
+
+hr {
+    width:70%;
+    border-width:0px;
+    height:1px;
+    background-color:var(--TB-Text-Color);
+}
+
+img, span {vertical-align:middle;}
+
+/*---------- COLORS & POSITIONING ---------- */
+:root {
+    /* ----- NAV LINKS ----- */
+    --NLTP:30px;
+    --NLLP:30px;
+    --NLBG:#dc7b05;
+    --NLBD:#5b2b2a;
+    --NLBM1:#853605;
+    --NLBM2:#b14e05;
+    --NLBL:#f7ba00;
+    --NLBS:2px;
+    --NLIS:25px;
+    --NLIC:#5b2b2a;
+    --NLIP:3px;
+    --NLG:9px;
+    
+    /* ----- MAIN GRID ----- */
+    --MGGV:14px;
+    --MGGS:20px;
+    
+    /* ----- BOXES ----- */
+    --LTBW:764px;
+    --TBBM1:#fb9e00;
+    --TBBM2:#e08700;
+    --TBB-Dark:#5b2b2a;
+    --TBB-Medium-1:#903e01;
+    --TBB-Medium-2:#ba5901;
+    --TBB-Light:#f7ba00;
+    --TBB-Shadow:#cb8652;
+    --TBB-Size:3px;
+    --TB-BG:#ffcd82;
+    --TB-BG-Gradient-1:#ffcd82;
+    --TB-BG-Gradient-2:#eeb272;
+    --TBTVP:12px;
+    --TB-Text-Side-Padding:15px;
+    --TB-Text-Color:#000;
+    --TB-Text-Shadow:#d7864f;
+    --TB-Link-Color:#a5682a;
+    
+    /* ----- TITLE BOX ----- */
+    --TB-Text-Font-Size:18px;
+    --TB-Text-Line-Height:1em;
+    
+    /* ----- BIO BOX ----- */
+    --Bio-Box-Font-Size:21px;
+    --Bio-Box-Line-Height:1.1em;
+    --Bio-Box-Maximum-Height:auto;
+    --Scrollbar-Thumb:transparent;
+    
+    /* ----- SIDEBAR BOXES ----- */
+    --Sidebar-Width:120px;
+    --Music-Controls-Size:12px;
+    --Music-Title-Font-Size:15px;
+    --Sidebar-Image-Width:85px;
+    --Desc-Box-Font-Size:17px;
+    --Desc-Box-Line-Height:1.25em;
+    
+    /* ----- CUSTOM LINKS ----- */
+    --Custom-Links-Box-Width:552px;
+    --Custom-Links-Icons-Size:40px;
+    --Custom-Links-Icons-Padding:6px;
+    
+    /* ----- STATUS TAB ----- */
+    --ST-Bottom-Position:25px;
+   --ST-Left-Position:25px;
+
+   --ST-Borders-Size:3px; /* looks best with 3px-5px */
+   --ST-Border-Dark:#5b2c26;
+   --ST-Border-Medium:#b24d05;
+   --ST-Border-Light:#db7c0e;
+   --ST-Border-Shadow:#d7864f;
+
+   --ST-Icon-BG:#ffd285;
+   --ST-Icon-Border:#fff0ba;
+   --ST-Image-Padding:5px;
+   --ST-Image-Size:39px;
+   --ST-Image-URL: https://austinh115.github.io/austin/mediawiki/images/9/9d/Cranberry_Candy.png?1;
+
+   --ST-Text-BG:#ffd285;
+   --ST-Font-Size:16px;
+   --ST-Text-Color:#000;
+   --ST-Text-Shadow:#d7864f;
+   --ST-Text:Cranberry Candy;
+    
+    /* ----- ENERGY BAR ----- */
+    --EB-Bottom-Position:25px;
+    --EB-Right-Position:25px;
+    --EB-B-Main:#dc7b05;
+    --EB-B-Dark:#5b2b2a;
+    --EB-B-Medium-1:#853605;
+    --EB-B-Medium-2:#b14e05;
+    --EB-B-Light:#f7ba00;
+    --EB-B-Shadow:#D7864F;
+    --EBBS:2.5px;
+    --EB-Icon-Size:20px;
+    --EB-Icon-Padding:0px;
+    --EB-Maximum-Height:155px;
+    --EB-Width:15px;
+    --EB-Bar-Empty:#ffd782;
+    --EB-Bar-Line:#B4730C;
+    --EB-Bar-Fill:#FCA907;
+    --EB-Fill-Meter:36%;
+}
+
+/*---------- NAVLINKS ---------- */
+#navlinks {
+    position:fixed;
+    top:0;margin-top:var(--NLTP);
+    left:0;margin-left:var(--NLTP);
+    z-index:2;
+}
+
+.navlink {
+    margin-bottom:var(--NLG);
+}
+
+.navlink a, .navlink li {
+    display:inline-block;
+    width:100%;
+    height:100%;
+}
+
+.imgwarp {
+    width:calc(var(--NLIS) %2B (var(--NLBS) * 4));
+    height:var(--NLIS);
+    background:var(--NLBG);
+    border-left:var(--NLBS) solid var(--NLBD);
+    border-right:var(--NLBS) solid var(--NLBD);
+    text-align:center;
+}
+
+.navicon.svg {
+    display:inline-block;
+    width:var(--NLIS);
+    height:var(--NLIS);
+    padding:var(--NLIP);
+    box-sizing:border-box;
+   -webkit-box-sizing:border-box;
+   -moz-box-sizing:border-box;
+   -ms-box-sizing:border-box;
+   -o-box-sizing:border-box;
+   text-align:center;
+}
+
+.navicon svg {
+    fill:var(--NLIC);
+    width:100%;
+    height:100%;
+}
+
+.navicon-theme svg {
+    filter:brightness(65%);
+    -webkit-filter:brightness(65%);
+}
+
+.navicon.img img {
+    width:var(--NLIS);
+    height:var(--NLIS);
+    padding:var(--NLIP);
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+}
+
+/*---------- STATUS TAB ---------- */
+#status-tab {
+    position:fixed;
+    bottom:0;margin-bottom:var(--ST-Bottom-Position);
+    left:0;margin-left:var(--ST-Left-Position);
+    display:flex;
+    align-items:center;
+}
+
+.icon-image {
+    width:var(--ST-Image-Size);
+    height:var(--ST-Image-Size);
+    padding:var(--ST-Image-Padding);
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+}
+
+.the-text {
+    margin-top:-2px; /* text top gap offset */
+    line-height:1.2em;
+    font-family:sdv;
+    font-size:var(--ST-Font-Size);
+    letter-spacing:0.7px;
+    text-shadow:-1px 1px 1px var(--ST-Text-Shadow);
+    color:var(--ST-Text-Color);
+}
+
+/*---------- ENERGY BAR ---------- */
+#energybar {
+    position:fixed;
+    bottom:0;margin-bottom:var(--EB-Bottom-Position);
+    right:0;margin-right:var(--EB-Right-Position);
+    z-index:2;
+}
+
+.energyicon {
+    margin-top:calc(var(--EBBS) * -0.75);
+}
+
+.energyicon.img img {
+    width:var(--EB-Icon-Size);
+    height:var(--EB-Icon-Size);
+    padding:var(--EB-Icon-Padding);
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+}
+
+.energyicon.svg {
+    display:inline-block;
+    width:var(--EB-Icon-Size);
+    height:var(--EB-Icon-Size);
+    padding:var(--EB-Icon-Padding);
+    box-sizing:border-box;
+   -webkit-box-sizing:border-box;
+   -moz-box-sizing:border-box;
+   -ms-box-sizing:border-box;
+   -o-box-sizing:border-box;
+   text-align:center;
+}
+
+.energyicon svg {
+}
+
+.energybar-fill {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:var(--EB-Fill-Meter);
+    background:var(--EB-Bar-Fill);
+    border-top:var(--EBBS) solid var(--EB-Bar-Line);
+}
+
+/*---------- BOXES ---------- */
+.hholder {
+    background-image:linear-gradient(to bottom, var(--TB-BG-Gradient-1), var(--TB-BG-Gradient-2));
+    border-right:calc(var(--TBB-Size) * 2) solid var(--TBB-Shadow);
+}
+
+.box-text {
+   margin-top:-3px; /* text top gap offset */
+   width:100%;
+   padding:var(--TBTVP) var(--TB-Text-Side-Padding);
+   color:var(--TB-Text-Color);
+   text-shadow:-1px 1px 1px var(--TB-Text-Shadow);
+   box-sizing:border-box;
+   -webkit-box-sizing:border-box;
+   -moz-box-sizing:border-box;
+   -ms-box-sizing:border-box;
+   -o-box-sizing:border-box;
+}
+
+.title-box .intro-img {
+    margin-top:-2.5px;
+    margin-right:calc(var(--TB-Text-Side-Padding) * 0.75);
+    max-height:23px;
+}
+
+.title-box .box-text {
+    font-family:sdv;
+    letter-spacing:0.7px;
+    font-size:var(--TB-Text-Font-Size);
+    line-height:var(--TB-Line-Height);
+}
+
+.box-text a {
+    color:var(--TB-Link-Color);
+}
+
+.box-text li {
+    list-style-image:url("https://i.postimg.cc/VkXbq6pN/Gentle-Lark-Feather.png");
+}
+
+.box-text li > span {
+    display:inline-block;
+    margin-left:3px;
+    vertical-align:top;
+    margin-top:-4px;
+}
+
+/*---------- BIO BOX ---------- */
+.bio-box .box-text {
+    margin-top:0px;
+    font-family:aseprite;
+    font-size:var(--Bio-Box-Font-Size);
+    letter-spacing:0.3px;
+    line-height:var(--Bio-Box-Line-Height);
+    max-height:var(--Bio-Box-Maximum-Height);
+    overflow-y:auto;
+    height:auto;
+    visibility:visible;
+}
+
+.bio-box .box-text::-webkit-scrollbar {
+    width:var(--TBB-Size);
+    height:var(--TBB-Size);
+    background-color:var(--Scrollbar-BG);
+}
+ 
+.bio-box .box-text::-webkit-scrollbar-thumb {
+    background-color:var(--Scrollbar-Thumb);
+}
+
+.divider {
+    display:table;
+    margin:10px auto;
+}
+
+.divider img {
+    margin-top:3px;
+}
+
+/*---------- SIDEBAR BOXES ---------- */
+/*---------- MUSIC BOX ---------- */
+.musicrack {
+    display:flex;
+    align-items:center;
+}
+
+.music-controls {
+   width:var(--Music-Controls-Size);
+   overflow:hidden;
+}
+
+.music-controls svg {
+   width:var(--Music-Controls-Size);
+   height:var(--Music-Controls-Size);
+   color:var(--TB-Text-Color);
+   stroke-width:1.5px;
+}
+
+.pausee {display:none;}
+
+.beff {display:none;}
+.aff {display:block;}
+
+.music-title {
+   margin-left:6px;
+   font-size:var(--Music-Title-Font-Size);
+   color:var(--TB-Text-Color);
+}
+
+/*---------- SIDEBAR IMAGE ---------- */
+.sidebar-image-box {
+    margin:var(--MGGV) auto;
+}
+
+.imgcont {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:calc(var(--Sidebar-Width) - (var(--TBB-Size) * 2));
+}
+
+.sidebar-image {
+    width:var(--Sidebar-Image-Width);
+}
+
+/*---------- DESC BOX ---------- */
+.desc-box .box-text {
+    font-family:sdv;
+    letter-spacing:0.7px;
+    font-size:var(--Desc-Box-Font-Size);
+    line-height:var(--Desc-Box-Line-Height);
+    text-align:center;
+}
+
+/*---------- CUSTOM LINKS ---------- */
+.links-box {
+    margin-top:var(--MGGV);
+}
+
+.links-box .confusion::after {
+    content:"";
+    position:absolute;
+    margin-top:var(--TBB-Size);
+    right:0;margin-right:calc(var(--TBB-Size) * 2);
+    width:var(--TBB-Size);
+    height:var(--TBB-Size);
+    background:var(--TBB-Shadow);
+    z-index:3;
+}
+
+.wine {
+    margin-top:calc(var(--TBB-Size) * -1);
+    flex-wrap:wrap;
+    width:calc(100% %2B (var(--TBB-Size) * 2));
+}
+
+.tofu {
+    position:relative;
+    width:var(--Custom-Links-Icons-Size);
+    height:var(--Custom-Links-Icons-Size);
+    border-style:ridge;
+    border-width:var(--TBB-Size);
+    border-top-color:transparent;
+    border-right-color:var(--TBB-Shadow);
+    border-bottom-color:var(--TBBM1);
+    border-left-color:transparent;
+}
+
+.tofu a {
+    display:inline-block;
+    width:100%;
+    height:100%;
+}
+
+.tofu-img {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-left:calc(var(--TBB-Size) * -1);
+}
+
+.customlink-image {
+    width:100%;
+    padding:var(--Custom-Links-Icons-Padding);
+    box-sizing:border-box;
+}
+
+/*---------- NAVLINKS ---------- */
+.fruitrack {display:flex;}
+
+.nutbar {
+    margin-left:calc(var(--NLBS) * 2);
+    width:calc(var(--NLIS) %2B (var(--NLBS) * 2));
+    height:var(--NLBS);
+    background:var(--NLBM1);
+}
+
+.crispalou {
+    margin-left:var(--NLBS);
+    width:calc(var(--NLIS) %2B (var(--NLBS) * 2));
+    height:var(--NLBS);
+    background:var(--NLBL);
+    border-left:var(--NLBS) solid var(--NLBM1);
+    border-right:var(--NLBS) solid var(--NLBM1);
+}
+
+.nut {
+    width:var(--NLBS);
+    height:var(--NLBS);
+    background:var(--NLBM1);
+}
+
+.darknut {
+    width:var(--NLBS);
+    height:var(--NLBS);
+    background:var(--NLBD);
+}
+
+.papaya, .darkpapaya {
+    width:calc(var(--NLIS) %2B (var(--NLBS) * 2));
+    height:var(--NLBS);
+    background:var(--NLBG);
+    border-left:var(--NLBS) solid var(--NLBL);
+    border-right:var(--NLBS) solid var(--NLBL);
+}
+
+.darkpapaya {
+    border-left:var(--NLBS) solid var(--NLBM2);
+    border-right:var(--NLBS) solid var(--NLBM2);
+}
+
+.yaku {
+    margin-left:var(--NLBS);
+}
+
+.yakult {
+    width:calc(var(--NLIS));
+    height:var(--NLBS);
+    background:var(--NLBM2);
+    border-left:var(--NLBS) solid var(--NLBM1);
+    border-right:var(--NLBS) solid var(--NLBM1);
+}
+
+.nutbar.dark {
+    background:var(--NLBD);
+}
+
+/*---------- BOX ASSETS ---------- */
+/* main grid */
+#quois-a {
+    position:fixed;
+    top:0;left:0;right:0;
+    margin:0 auto;
+    height:100vh;
+    text-align:center;
+}
+
+#quois-b {display:inline-block;}
+
+#quois-c {
+   height:100vh;
+   display:table;
+}
+
+#quois-d {
+   display:table-cell;
+   vertical-align:middle;
+}
+
+#quois-grid {
+    display:flex;
+    align-items:center;
+    text-align:left;
+}
+
+/* -- */
+
+.title-box {
+    margin-bottom:var(--MGGV);
+}
+
+.soup {
+    margin-left:calc(var(--TBB-Size) * 2);
+    width:calc(var(--LTBW) %2B (var(--TBB-Size) * 4));
+    height:var(--TBB-Size);
+    background:var(--TBB-Dark);
+}
+
+.maple {
+    margin-left:var(--TBB-Size);
+    width:var(--TBB-Size);
+    height:var(--TBB-Size);
+    background:var(--TBB-Medium-1);
+    border-right:calc(var(--TBB-Size) * 2) solid var(--TBB-Medium-2);
+}
+
+.syrup {
+    width:calc(var(--LTBW) %2B (var(--TBB-Size) * 2));
+    height:var(--TBB-Size);
+    background:var(--TBBM1);
+    border-right:var(--TBB-Size) solid var(--TBB-Medium-1);
+}
+
+/* -- */
+
+.kami {
+    width:var(--TBB-Size);
+    height:var(--TBB-Size);
+    background:var(--TBB-Medium-2);
+    border-left:var(--TBB-Size) solid var(--TBB-Dark);
+    border-right:var(--TBB-Size) solid var(--TBB-Medium-1);
+}
+
+.nari {
+    width:calc(var(--LTBW) %2B var(--TBB-Size));
+    height:var(--TBB-Size);
+    background:var(--TBB-Medium-2);
+    border-right:var(--TBB-Size) solid var(--TBBM2);
+}
+
+.denki {
+    width:var(--TBB-Size);
+    height:var(--TBB-Size);
+    background:var(--TBBM2);
+    border-left:var(--TBB-Size) solid var(--TBB-Medium-2);
+    border-right:var(--TBB-Size) solid var(--TBB-Dark);
+}
+
+/* -- */
+.cola {
+    width:calc(var(--TBB-Size) * 2);
+    height:var(--TBB-Size);
+    background:var(--TBB-Medium-2);
+    border-left:var(--TBB-Size) solid var(--TBB-Dark);
+}
+
+.cotton {
+    width:var(--TBB-Size);
+    height:calc(100% - var(--TBB-Size));
+    background:var(--TBB-Medium-2);
+    border-left:var(--TBB-Size) solid var(--TBB-Dark);
+    border-right:var(--TBB-Size) solid var(--TBBM2);
+}
+
+/* -- */
+
+.freme {
+    /*margin-left:calc(var(--TBB-Size) * 3); */
+    border:var(--TBB-Size) solid var(--TBB-Medium-1);
+    width:var(--LTBW);
+}
+
+.confusion {
+    position:relative;
+    height:var(--TBB-Size);
+    background:var(--TBB-Shadow);
+}
+
+.mycabbages {
+    position:relative;
+    height:var(--TBB-Size);
+    background:var(--TB-BG);
+    border-right:calc(var(--TBB-Size) * 3) solid var(--TBB-Shadow);
+}
+
+/* -- */
+/* -- */
+
+.booze, .ale {
+    width:calc(var(--TBB-Size) * 2);
+    height:var(--TBB-Size);
+    background:var(--TBBM2);
+    border-right:var(--TBB-Size) solid var(--TBB-Dark);
+}
+
+.soda {
+    width:var(--TBB-Size);
+    height:calc(100% - var(--TBB-Size));
+    background:var(--TBBM2);
+    border-left:var(--TBB-Size) solid var(--TBB-Medium-2);
+    border-right:var(--TBB-Size) solid var(--TBB-Dark);
+}
+
+.ale {
+    background:var(--TBB-Medium-2);
+}
+
+/* -- */
+.bread {
+    width:var(--TBB-Size);
+    height:var(--TBB-Size);
+    background:var(--TBB-Medium-2);
+    border-left:var(--TBB-Size) solid var(--TBB-Dark);
+    border-right:var(--TBB-Size) solid var(--TBB-Medium-1);
+}
+
+.heavens {
+    width:var(--LTBW);
+    height:var(--TBB-Size);
+    background:var(--TBBM1);
+    border-left:var(--TBB-Size) solid var(--TBB-Medium-2);
+    border-right:var(--TBB-Size) solid var(--TBB-Medium-2);
+}
+
+.qoo {
+    width:var(--TBB-Size);
+    height:var(--TBB-Size);
+    background:var(--TBB-Medium-2);
+    border-left:var(--TBB-Size) solid var(--TBB-Medium-1);
+    border-right:var(--TBB-Size) solid var(--TBB-Dark);
+}
+
+/* -- */
+
+.mojito {
+    margin-left:calc(var(--TBB-Size) * 1);
+    width:calc(var(--LTBW) %2B (var(--TBB-Size) * 4));
+    height:var(--TBB-Size);
+    background:var(--TBB-Medium-2);
+    border-left:var(--TBB-Size) solid var(--TBB-Medium-1);
+    border-right:var(--TBB-Size) solid var(--TBB-Medium-1);
+}
+
+/* -- */
+#quois-right {
+    margin-left:var(--MGGS);
+}
+
+#quois-right .soup {
+    width:calc(var(--Sidebar-Width) %2B (var(--TBB-Size) * 4));
+}
+
+#quois-right .syrup {
+    width:calc(var(--Sidebar-Width) %2B (var(--TBB-Size) * 2));
+}
+
+#quois-right .nari {
+    width:calc(var(--Sidebar-Width) %2B var(--TBB-Size));
+}
+
+#quois-right .freme, #quois-right .heavens {
+    width:var(--Sidebar-Width);
+}
+
+/* -- */
+
+#quois-right .mojito {
+    width:calc(var(--Sidebar-Width) %2B (var(--TBB-Size) * 4));
+}
+
+.links-box .soup {
+    width:calc(var(--Custom-Links-Box-Width) %2B (var(--TBB-Size) * 4));
+}
+
+.links-box .syrup {
+    width:calc(var(--Custom-Links-Box-Width) %2B (var(--TBB-Size) * 2));
+}
+
+.links-box .nari {
+    width:calc(var(--Custom-Links-Box-Width) %2B var(--TBB-Size));
+}
+
+.links-box .freme, .links-box .heavens {
+    width:var(--Custom-Links-Box-Width);
+}
+
+.links-box .mojito {
+    width:calc(var(--Custom-Links-Box-Width) %2B (var(--TBB-Size) * 4));
+}
+
+#status-tab {visibility:hidden}
+
+.sv-left {
+    width:var(--ST-Borders-Size);
+    height:calc(var(--ST-Image-Size) %2B (var(--ST-Borders-Size) * 6));
+    background:var(--ST-Border-Dark);
+}
+
+/* -------- */
+
+.sv-box {
+    position:relative;
+    width:calc(var(--ST-Image-Size) %2B (var(--ST-Borders-Size) * 6));
+    height:calc(var(--ST-Image-Size) %2B (var(--ST-Borders-Size) * 6));
+    border-top:var(--ST-Borders-Size) solid var(--ST-Border-Dark);
+    border-bottom:var(--ST-Borders-Size) solid var(--ST-Border-Dark);
+}
+
+.bar-top, .bar-bot {
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Border-Light);
+    border-left:var(--ST-Borders-Size) solid var(--ST-Border-Medium);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Border-Medium);
+}
+
+.bar-bot {
+    position:absolute;
+    bottom:0;
+    width:calc(100% - (var(--ST-Borders-Size) * 2));
+}
+
+.cides {
+    height:calc(100% - (var(--ST-Borders-Size) * 2));
+    border-left:var(--ST-Borders-Size) solid var(--ST-Border-Light);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Border-Light);
+}
+
+.cbox {
+    position:relative;
+    width:calc(100% - (var(--ST-Borders-Size) * 2));
+    height:calc(100% - (var(--ST-Borders-Size) * 2));
+    border:var(--ST-Borders-Size) solid var(--ST-Border-Medium);
+}
+
+.innbar-top, .innbar-bot {
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Icon-Border);
+    border-left:var(--ST-Borders-Size) solid var(--ST-Icon-BG);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Icon-BG);
+}
+
+.innbar-bot {
+    position:absolute;
+    bottom:0;
+    width:calc(100% - (var(--ST-Borders-Size) * 2));
+}
+
+.sun-s {
+    height:calc(100% - (var(--ST-Borders-Size) * 2));
+    background:var(--ST-Icon-BG);
+    border-left:var(--ST-Borders-Size) solid var(--ST-Icon-Border);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Icon-Border);
+}
+
+/* -------- */
+
+.sv-right {
+    width:var(--ST-Borders-Size);
+    height:calc(var(--ST-Image-Size) %2B (var(--ST-Borders-Size) * 6));
+    background:var(--ST-Border-Dark);
+}
+
+/* -------- */
+
+.longboi {
+    display:flex;
+}
+
+.text-holder {
+    background:var(--ST-Text-BG);
+    border-top:var(--ST-Borders-Size) solid var(--ST-Border-Dark);
+    border-bottom:var(--ST-Borders-Size) solid var(--ST-Border-Dark);
+}
+
+.suns-i {
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Border-Light);
+    border-left:var(--ST-Borders-Size) solid var(--ST-Border-Medium);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Border-Medium);
+}
+
+.suns-ii {
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Border-Medium);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Border-Light);
+}
+
+.th-in {
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Border-Dark);
+}
+
+.doubloons {
+    height:calc(var(--ST-Borders-Size) * 2);
+    background:var(--ST-Border-Shadow);
+}
+
+.t-bar {
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Text-BG);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Border-Shadow);
+}
+
+.tth {
+    padding-top:var(--ST-Borders-Size);
+    padding-right:calc(var(--ST-Borders-Size) * 4);
+    padding-bottom:calc(var(--ST-Borders-Size) * 2);
+    padding-left:calc(var(--ST-Borders-Size) * 3);
+    height:calc((var(--ST-Borders-Size) * 5) - 0px);
+    overflow:hidden;
+}
+
+.suns-iii {
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Border-Light);
+    border-left:var(--ST-Borders-Size) solid var(--ST-Border-Medium);
+}
+
+.suns-iv {
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Border-Medium);
+}
+
+/* --- */
+
+.lots {
+    margin-top:var(--ST-Borders-Size);
+}
+
+.duo {
+    width:calc(var(--ST-Borders-Size) * 2);
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Border-Dark);
+}
+
+.trio {
+    width:var(--ST-Borders-Size);
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Border-Medium);
+    border-left:var(--ST-Borders-Size) solid var(--ST-Border-Light);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Border-Dark);
+}
+
+.fruitrack {
+    display:flex;
+}
+
+.melon {
+    width:var(--ST-Borders-Size);
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Border-Medium);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Border-Light);
+}
+
+.lemon {
+    width:var(--ST-Borders-Size);
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Border-Medium);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Border-Dark);
+}
+
+.mango {
+    width:var(--ST-Borders-Size);
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Border-Dark);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Border-Medium);
+}
+
+.pear {
+    width:var(--ST-Borders-Size);
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Border-Light);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Border-Dark);
+}
+
+.peach {
+    width:var(--ST-Borders-Size);
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Border-Dark);
+    border-left:var(--ST-Borders-Size) solid var(--ST-Border-Shadow);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Border-Light);
+}
+
+.orange {
+    width:var(--ST-Borders-Size);
+    height:var(--ST-Borders-Size);
+    background:var(--ST-Border-Medium);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Border-Dark);
+}
+
+.apple {
+    width:var(--ST-Borders-Size);
+    height:calc(var(--ST-Borders-Size) * 7);
+    background:var(--ST-Border-Dark);
+    border-left:var(--ST-Borders-Size) solid var(--ST-Border-Shadow);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Border-Medium);
+}
+
+.banana {
+    width:var(--ST-Borders-Size);
+    height:calc(var(--ST-Borders-Size) * 7);
+    background:var(--ST-Border-Light);
+    border-right:var(--ST-Borders-Size) solid var(--ST-Border-Dark);
+}
+
+#status-tab img {vertical-align:middle;}
+
+/*---------- ENERGY BAR ---------- */
+
+.lacie {
+    margin-left:calc(var(--EBBS) * 2);
+    width:calc(var(--EB-Width) - (var(--EBBS) * 2));
+    height:var(--EBBS);
+    background:var(--EB-B-Medium-2);
+    border-left:calc(var(--EBBS) * 2) solid var(--EB-B-Medium-1);
+    border-right:calc(var(--EBBS) * 2) solid var(--EB-B-Medium-1);
+}
+
+.deboui {
+    margin-left:var(--EBBS);
+    width:calc(var(--EB-Width) %2B (var(--EBBS) * 2));
+    height:var(--EBBS);
+    background:var(--EB-B-Light);
+    border-left:var(--EBBS) solid var(--EB-B-Medium-1);
+    border-right:var(--EBBS) solid var(--EB-B-Medium-1);
+}
+
+.delia {
+    width:var(--EBBS);
+    height:var(--EBBS);
+    background:var(--EB-B-Dark);
+    border-right:var(--EBBS) solid var(--EB-B-Light);
+}
+
+.delilah {
+    width:calc(var(--EB-Width) %2B (var(--EBBS) * 2));
+    height:var(--EBBS);
+    background:var(--EB-B-Main);
+}
+
+.delib {
+    width:var(--EBBS);
+    height:var(--EBBS);
+    background:var(--EB-B-Light);
+    border-right:var(--EBBS) solid var(--EB-B-Dark);
+}
+
+/* -- */
+
+.pourquoi {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:calc(var(--EB-Width) %2B (var(--EBBS) * 4));
+    height:calc(var(--EB-Width) %2B (var(--EBBS) * 1.5));
+    background:var(--EB-B-Main);
+    border-left:var(--EBBS) solid var(--EB-B-Dark);
+    border-right:var(--EBBS) solid var(--EB-B-Dark);
+    text-align:center;
+}
+
+/* -- */
+
+.bepis {
+    width:var(--EBBS);
+    height:var(--EBBS);
+    background:var(--EB-B-Medium-2);
+    border-left:var(--EBBS) solid var(--EB-B-Dark);
+    border-right:var(--EBBS) solid var(--EB-B-Dark);
+}
+
+.bepsi {
+    width:calc(var(--EB-Width) - (var(--EBBS) * 2));
+    height:var(--EBBS);
+    background:var(--EB-B-Medium-1);
+    border-left:var(--EBBS) solid var(--EB-B-Dark);
+    border-right:var(--EBBS) solid var(--EB-B-Dark);
+}
+
+/* -- */
+
+.hazel {
+    width:var(--EB-Width);
+    height:var(--EBBS);
+    background:var(--EB-B-Main);
+    border-left:var(--EBBS) solid var(--EB-B-Medium-2);
+    border-right:var(--EBBS) solid var(--EB-B-Medium-2);
+}
+
+.boob {
+    width:calc(var(--EBBS) * 2);
+    height:var(--EBBS);
+    background:var(--EB-B-Dark);
+}
+
+/* -- */
+
+.anut {
+    width:var(--EBBS);
+    height:var(--EBBS);
+    background:var(--EB-B-Medium-2);
+    border-left:var(--EBBS) solid var(--EB-B-Dark);
+    border-right:var(--EBBS) solid var(--EB-B-Main);
+}
+
+.latte {
+    width:calc(var(--EB-Width) - (var(--EBBS) * 2));
+    height:var(--EBBS);
+    background:var(--EB-B-Medium-1);
+    border-left:var(--EBBS) solid var(--EB-B-Medium-2);
+    border-right:var(--EBBS) solid var(--EB-B-Medium-2);
+}
+
+.bnut {
+    width:var(--EBBS);
+    height:var(--EBBS);
+    background:var(--EB-B-Medium-2);
+    border-left:var(--EBBS) solid var(--EB-B-Main);
+    border-right:var(--EBBS) solid var(--EB-B-Dark);
+}
+
+/* -- */
+
+.pyg {
+    width:var(--EBBS);
+    height:var(--EBBS);
+    background:var(--EB-B-Main);
+    border-left:var(--EBBS) solid var(--EB-B-Dark);
+    border-right:var(--EBBS) solid var(--EB-B-Medium-2);
+}
+
+.geneva {
+    width:var(--EB-Width);
+    height:var(--EBBS);
+    background:var(--EB-B-Shadow);
+}
+
+.sty {
+    width:var(--EBBS);
+    height:var(--EBBS);
+    background:var(--EB-B-Main);
+    border-left:var(--EBBS) solid var(--EB-B-Medium-2);
+    border-right:var(--EBBS) solid var(--EB-B-Dark);
+}
+
+/* -- */
+
+.orz {
+    width:var(--EBBS);
+    height:var(--EB-Maximum-Height);
+    background:var(--EB-B-Main);
+    border-left:var(--EBBS) solid var(--EB-B-Dark);
+    border-right:var(--EBBS) solid var(--EB-B-Medium-2);
+}
+
+.maiswhat, .mais {
+    width:calc(var(--EB-Width) - var(--EBBS));
+    height:var(--EB-Maximum-Height);
+    background:var(--EB-Bar-Empty);
+    border-right:var(--EBBS) solid var(--EB-B-Shadow);
+}
+
+.urk {
+    width:var(--EBBS);
+    height:var(--EB-Maximum-Height);
+    background:var(--EB-B-Main);
+    border-left:var(--EBBS) solid var(--EB-B-Medium-2);
+    border-right:var(--EBBS) solid var(--EB-B-Dark);
+}
+
+/* -- */
+.kara, .cara {
+    width:var(--EBBS);
+    height:var(--EBBS);
+    background:var(--EB-B-Main);
+    border-left:var(--EBBS) solid var(--EB-B-Dark);
+    border-right:var(--EBBS) solid var(--EB-B-Medium-1);
+}
+
+.cara {
+    background:var(--EB-B-Medium-2);
+}
+
+.mais {
+    height:var(--EBBS);
+}
+
+.made, .nade {
+    width:var(--EBBS);
+    height:var(--EBBS);
+    background:var(--EB-B-Main);
+    border-left:var(--EBBS) solid var(--EB-B-Medium-1);
+    border-right:var(--EBBS) solid var(--EB-B-Dark);
+}
+
+.nade {
+    background:var(--EB-B-Medium-2);
+}
+
+/* -- */
+.xenon {
+    margin-left:var(--EBBS);
+    width:var(--EBBS);
+    height:var(--EBBS);
+    background:var(--EB-B-Dark);
+    border-right:calc(var(--EBBS) * 2) solid var(--EB-B-Medium-1);
+}
+
+.fennel {
+    width:calc(var(--EB-Width) - (var(--EBBS) * 2));
+    height:var(--EBBS);
+    background:var(--EB-B-Medium-2);
+}
+
+.akroma {
+    width:var(--EBBS);
+    height:var(--EBBS);
+    background:var(--EB-B-Dark);
+    border-left:calc(var(--EBBS) * 2) solid var(--EB-B-Medium-1);
+}
+
+.muffin {
+    margin-left:calc(var(--EBBS) * 2);
+    width:calc(var(--EB-Width) %2B (var(--EBBS) * 2));
+    height:var(--EBBS);
+    background:var(--EB-B-Dark);
+}
+
+/* -- */
+
+.behold {
+    position:absolute;
+    margin-top:calc((var(--EB-Maximum-Height) %2B (var(--EBBS) * 5)) * -1);
+    margin-left:calc(var(--EBBS) * 3);
+    width:var(--EB-Width);
+    height:calc(var(--EB-Maximum-Height) %2B (var(--EBBS) * 3));
+}
+</style>
+<!------- MAIN GRID ------->
+<div id="quois-a">
+<div id="quois-b">
+<div id="quois-c">
+<div id="quois-d">
+<div id="quois-grid">
+<div id="quois-left">
+
+
+    <!---- START TITLE BOX ---->
+    <!-- 🌱🌱🌱🌱🌱🌱🌱 -->
+    <div class="title-box">
+        <div class="soup"></div>
+        
+        <div class="fruitrack">
+            <div class="maple"></div>
+            <div class="syrup"></div>
+        </div><!--fruitrack-->
+        
+        <div class="fruitrack">
+            <div class="kami"></div>
+            <div class="nari"></div>
+            <div class="denki"></div>
+        </div><!--fruitrack-->
+        
+        <div class="fruitrack">
+            <div class="skele">
+                <div class="cola"></div>
+                <div class="cotton"></div>
+                <div class="cola"></div>
+            </div>
+            
+            <div class="freme">
+                <div class="confusion"></div>
+                <div class="mycabbages"></div>
+                <div class="hholder">
+                    <div class="box-text">
+                    
+                        <!-- small left image -->
+                        <!-- 🔽🔽🔽🔽🔽🔽🔽 -->
+                        <img class="intro-img" src="https://i.postimg.cc/0j6zb27P/Moonlight-pendent13-Tiny-Plants.png" />
+                        
+                        <!-- title box title -->
+                        <!-- 🔽🔽🔽🔽🔽🔽🔽 -->
+                        <span>—; let justice be done, though the heavens fall</span>
+                        
+                    </div><!--do not delete this line-->
+                </div>
+            </div><!--freme-->
+            
+            <div class="skele">
+                <div class="booze"></div>
+                <div class="soda"></div>
+                <div class="ale"></div>
+            </div>
+        </div><!--fruitrack-->
+        
+        <div class="fruitrack">
+            <div class="bread"></div>
+            <div class="heavens"></div>
+            <div class="qoo"></div>
+        </div><!--fruitrack-->
+        
+        <div class="mojito"></div>
+        <div class="soup"></div>
+    </div><!--title-box-->
+    <!-- 🛑🛑🛑🛑🛑🛑🛑 -->
+    <!---- END TITLE BOX ---->
+    
+    
+    
+    
+    
+    
+    
+    <!---- START BIO BOX ---->
+    <!-- 🌱🌱🌱🌱🌱🌱🌱 -->
+    <div class="bio-box">
+        <div class="soup"></div>
+        
+        <div class="fruitrack">
+            <div class="maple"></div>
+            <div class="syrup"></div>
+        </div><!--fruitrack-->
+        
+        <div class="fruitrack">
+            <div class="kami"></div>
+            <div class="nari"></div>
+            <div class="denki"></div>
+        </div><!--fruitrack-->
+        
+        <div class="fruitrack">
+            <div class="skele">
+                <div class="cola"></div>
+                <div class="cotton"></div>
+                <div class="cola"></div>
+            </div>
+            
+            <div class="freme">
+                <div class="confusion"></div>
+                <div class="mycabbages"></div>
+                <div class="hholder">
+                    <div class="box-text">
+                        [chat:728:486:3948713:Austin:transparent]
+                    </div><!--end box text--><!--do not delete this line-->
+                </div><!--do not delete this line-->
+            </div><!--freme-->
+            
+            <div class="skele">
+                <div class="booze"></div>
+                <div class="soda"></div>
+                <div class="ale"></div>
+            </div>
+        </div><!--fruitrack-->
+        
+        <div class="fruitrack">
+            <div class="bread"></div>
+            <div class="heavens"></div>
+            <div class="qoo"></div>
+        </div><!--fruitrack-->
+        
+        <div class="mojito"></div>
+        <div class="soup"></div>
+    </div><!--end bio box-->
+    <!-- 🛑🛑🛑🛑🛑🛑🛑 -->
+    <!---- END BIO BOX ---->
+</div><!--quois-left--><!--end main grid: left -->
+
+
+
+
+
+
+
+
+
+<!------- SIDEBAR ------->
+<div id="quois-right">
+
+    <!---- START MINI TITLE BOX ---->
+    <!-- 🌱🌱🌱🌱🌱🌱🌱 -->
+    <div class="desc-box">
+        <div class="soup"></div>
+        
+        <div class="fruitrack">
+            <div class="maple"></div>
+            <div class="syrup"></div>
+        </div><!--fruitrack-->
+        
+        <div class="fruitrack">
+            <div class="kami"></div>
+            <div class="nari"></div>
+            <div class="denki"></div>
+        </div><!--fruitrack-->
+        
+        <div class="fruitrack">
+            <div class="skele">
+                <div class="cola"></div>
+                <div class="cotton"></div>
+                <div class="cola"></div>
+            </div>
+            
+            <div class="freme">
+                <div class="confusion"></div>
+                <div class="mycabbages"></div>
+                <div class="hholder">
+                    <div class="box-text">
+                    
+                        <!-- mini title text -->
+                        <!-- 🔽🔽🔽🔽🔽🔽🔽 -->
+                        Austin
+                        
+                    </div><!--do not delete this line-->
+                </div><!--do not delete this line-->
+            </div><!--freme-->
+            
+            <div class="skele">
+                <div class="booze"></div>
+                <div class="soda"></div>
+                <div class="ale"></div>
+            </div>
+        </div><!--fruitrack-->
+        
+        <div class="fruitrack">
+            <div class="bread"></div>
+            <div class="heavens"></div>
+            <div class="qoo"></div>
+        </div><!--fruitrack-->
+        
+        <div class="mojito"></div>
+        <div class="soup"></div>
+    </div><!--desc-box-->
+    <!-- 🛑🛑🛑🛑🛑🛑🛑 -->
+    <!---- END MINI TITLE BOX ---->
+
+
+
+
+
+
+    
+    <!---- START SIDEBAR IMAGE BOX ---->
+    <!-- 🌱🌱🌱🌱🌱🌱🌱 -->
+    <div class="sidebar-image-box">
+        <div class="soup"></div>
+        
+        <div class="fruitrack">
+            <div class="maple"></div>
+            <div class="syrup"></div>
+        </div><!--fruitrack-->
+        
+        <div class="fruitrack">
+            <div class="kami"></div>
+            <div class="nari"></div>
+            <div class="denki"></div>
+        </div><!--fruitrack-->
+        
+        <div class="fruitrack">
+            <div class="skele">
+                <div class="cola"></div>
+                <div class="cotton"></div>
+                <div class="cola"></div>
+            </div>
+            
+            <div class="freme">
+                <div class="confusion"></div>
+                <div class="mycabbages"></div>
+                <div class="hholder">
+                <div class="imgcont">
+                
+                    <!-- sidebar image url -->
+                    <!-- 🔽🔽🔽🔽🔽🔽🔽 -->
+                    <img class="sidebar-image" src="https://i.postimg.cc/k4G4pX1K/King-Lulu-Deer-Pumpkin-Spice-And-Everything-Nice.gif" />
+                    
+                </div>
+                </div>
+            </div><!--freme-->
+            
+            <div class="skele">
+                <div class="booze"></div>
+                <div class="soda"></div>
+                <div class="ale"></div>
+            </div>
+        </div><!--fruitrack-->
+        
+        <div class="fruitrack">
+            <div class="bread"></div>
+            <div class="heavens"></div>
+            <div class="qoo"></div>
+        </div><!--fruitrack-->
+        
+        <div class="mojito"></div>
+        <div class="soup"></div>
+    </div><!--sidebar-image-box-->
+    <!-- 🛑🛑🛑🛑🛑🛑🛑 -->
+    <!---- END SIDEBAR IMAGE BOX ---->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!---- START MUSIC BOX ---->
+    <!-- 🌱🌱🌱🌱🌱🌱🌱 -->
+    <div class="desc-box">
+        <div class="soup"></div>
+        
+        <div class="fruitrack">
+            <div class="maple"></div>
+            <div class="syrup"></div>
+        </div><!--fruitrack-->
+        
+        <div class="fruitrack">
+            <div class="kami"></div>
+            <div class="nari"></div>
+            <div class="denki"></div>
+        </div><!--fruitrack-->
+        
+        <div class="fruitrack">
+            <div class="skele">
+                <div class="cola"></div>
+                <div class="cotton"></div>
+                <div class="cola"></div>
+            </div>
+            
+            <div class="freme">
+                <div class="confusion"></div>
+                <div class="mycabbages"></div>
+                <div class="hholder">
+                    <div class="box-text musicrack">
+                    
+                    
+                    <!-- music tooltip text (pref. long music name) -->
+                    <!-- 🔽🔽🔽🔽🔽🔽🔽 -->
+                        
+                        
+                        <!-- music title (pref. short) -->
+                        <!-- 🔽🔽🔽🔽🔽🔽🔽 -->   
+                        <div class="music-title">♫&ensp;Overture</div>
+
+
+                        <!-- music url -->
+                        <!-- ✓ autoplay support -->
+                        <!-- to generate a working url, read this: -->
+                        <!--https://glenthemes.tumblr.com/post/164215965424-->
+                        <!-- 🔽🔽🔽🔽🔽🔽🔽 -->
+                        
+                        
+                        
+                    </div><!--box-text-->
+                </div><!--hholder-->
+            </div><!--freme-->
+            
+            <div class="skele">
+                <div class="booze"></div>
+                <div class="soda"></div>
+                <div class="ale"></div>
+            </div>
+        </div><!--fruitrack-->
+        
+        <div class="fruitrack">
+            <div class="bread"></div>
+            <div class="heavens"></div>
+            <div class="qoo"></div>
+        </div><!--fruitrack-->
+        
+        <div class="mojito"></div>
+        <div class="soup"></div>
+    </div><!--desc-box-->
+    <!-- 🛑🛑🛑🛑🛑🛑🛑 -->
+    <!---- END MUSIC BOX ---->
+</div><!--quois-right--><!--end main grid: right-->
+</div><!--quois-grid--><!--end main grid-->
+
+
+
+
+
+
+
+
+
+
+
+<!------- CUSTOM LINKS ------->
+<div class="links-box">
+    <div class="soup"></div>
+    
+    <div class="fruitrack">
+        <div class="maple"></div>
+        <div class="syrup"></div>
+    </div><!--fruitrack-->
+    
+    <div class="fruitrack">
+        <div class="kami"></div>
+        <div class="nari"></div>
+        <div class="denki"></div>
+    </div><!--fruitrack-->
+    
+    <div class="fruitrack">
+        <div class="skele">
+            <div class="cola"></div>
+            <div class="cotton"></div>
+            <div class="cola"></div>
+        </div>
+        
+        <div class="freme">
+            <div class="confusion"></div>
+            <div class="hholder">
+                <div class="fruitrack wine">
+                    
+                    <!-- tofu -->                    
+                    
+                <!--do not delete below this line-->
+                </div><!--fruitrack-->
+            </div><!--hholder-->
+        </div><!--freme-->
+        
+        <div class="skele">
+            <div class="booze"></div>
+            <div class="soda"></div>
+            <div class="ale"></div>
+        </div>
+    </div><!--fruitrack-->
+    
+    <div class="fruitrack">
+        <div class="bread"></div>
+        <div class="heavens"></div>
+        <div class="qoo"></div>
+    </div><!--fruitrack-->
+    
+    <div class="mojito"></div>
+    <div class="soup"></div>
+</div><!--end links box-->
+</div><!--quois-d-->
+</div><!--quois-c-->
+</div><!--quois-b-->
+</div><!--quois-a-->
+<!--end main grid-->
+[youtube:000:000:sfATf-aMvbA:autoplay=1&loop=1&playlist=sfATf-aMvbA]
