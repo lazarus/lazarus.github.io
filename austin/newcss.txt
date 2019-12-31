@@ -1,0 +1,1 @@
+background:/** CSS By Austin (638877683) **/white}#chat{display:none}#glu{position:fixed}#glu{top:0}#glu{left:0}#glu{width:100vw}#glu{height:100vh;
