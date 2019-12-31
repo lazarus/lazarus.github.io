@@ -1615,67 +1615,6 @@ img, span {vertical-align:middle;}
     <!---- END MUSIC BOX ---->
 </div><!--quois-right--><!--end main grid: right-->
 </div><!--quois-grid--><!--end main grid-->
-
-
-
-
-
-
-
-
-
-
-
-<!------- CUSTOM LINKS ------->
-<div class="links-box">
-    <div class="soup"></div>
-    
-    <div class="fruitrack">
-        <div class="maple"></div>
-        <div class="syrup"></div>
-    </div><!--fruitrack-->
-    
-    <div class="fruitrack">
-        <div class="kami"></div>
-        <div class="nari"></div>
-        <div class="denki"></div>
-    </div><!--fruitrack-->
-    
-    <div class="fruitrack">
-        <div class="skele">
-            <div class="cola"></div>
-            <div class="cotton"></div>
-            <div class="cola"></div>
-        </div>
-        
-        <div class="freme">
-            <div class="confusion"></div>
-            <div class="hholder">
-                <div class="fruitrack wine">
-                    
-                    <!-- tofu -->                    
-                    
-                <!--do not delete below this line-->
-                </div><!--fruitrack-->
-            </div><!--hholder-->
-        </div><!--freme-->
-        
-        <div class="skele">
-            <div class="booze"></div>
-            <div class="soda"></div>
-            <div class="ale"></div>
-        </div>
-    </div><!--fruitrack-->
-    
-    <div class="fruitrack">
-        <div class="bread"></div>
-        <div class="heavens"></div>
-        <div class="qoo"></div>
-    </div><!--fruitrack-->
-    
-    <div class="mojito"></div>
-    <div class="soup"></div>
-</div><!--end links box-->
 </div><!--quois-d-->
 </div><!--quois-c-->
 </div><!--quois-b-->
