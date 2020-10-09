@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Among Us avatar designer by Austin</title>
+
+	<!-- One of the following themes -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
+	<!-- 'nano' theme -->
+
+	<!-- Modern or es5 bundle -->
+	<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+</head>
+
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+	* {
+		font-family: 'Poppins', Helvetica, sans-serif;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+		background: #bbb;
+	}
+
+	.container {
+		width: 100%;
+		padding-top: 3vh;
+		text-align: center;
+		box-sizing: border-box;
+	}
+
+	.pcr-app {
+		margin: 0 auto;
+	}
+
+	.container>button {
+		display: block;
+		margin: 0 auto;
+		font-size: 18px;
+		border-radius: 11px;
+		background: white;
+		padding: 20px 50px;
+		text-transform: uppercase;
+		outline: none;
+		transition: all 0.2s ease-in-out;
+		border: none;
+	}
+
+	.container>button:hover {
+		background: #ddd;
+		cursor: pointer;
+	}
+
+	canvas {
+		display: none;
+
+	}
+</style>
+
+<body>
+	<div class="container">
+		<h1>Among Us avatar designer</h1>
+		<div class="color-picker"></div>
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300"
+			viewBox="0 0 101 81.95">
+			<!-- 115.2 81.95 -->
+			<defs>
+				<style>
+					.cls-1 {
+						fill: #d7e1f1;
+					}
+
+					.cls-2 {
+						fill: #8293bf;
+					}
+
+					.cls-3,
+					.cls-5 {
+						stroke: #000;
+						stroke-miterlimit: 10;
+					}
+
+					.cls-3 {
+						stroke-width: 3px;
+						fill: url(#radial-gradient);
+					}
+
+					.cls-4 {
+						fill: #fff;
+					}
+
+					.cls-5 {
+						fill: none;
+						stroke-width: 4px;
+					}
+				</style>
+				<radialGradient id="radial-gradient" cx="63.56" cy="-2.32" r="50.9"
+					gradientTransform="translate(0.12 -0.68)" gradientUnits="userSpaceOnUse">
+					<stop offset="0.74" stop-color="#9acade" />
+					<stop offset="0.86" stop-color="#99c8dc" />
+					<stop offset="0.9" stop-color="#94c2d5" />
+					<stop offset="0.94" stop-color="#8cb7ca" />
+					<stop offset="0.96" stop-color="#80a7b9" />
+					<stop offset="0.98" stop-color="#7193a3" />
+					<stop offset="1" stop-color="#617d8b" />
+				</radialGradient>
+			</defs>
+			<title>Asset 13</title>
+			<g id="Layer_2" data-name="Layer 2">
+				<g id="Layer_1-2" data-name="Layer 1">
+					<path class="cls-1"
+						d="M20.24,43.1C15.3,59.73,17.9,65.44,54.37,71.42,149.16,86.12,54.84-68.89,20.24,43.1Z" />
+					<path class="cls-1"
+						d="M6.06,51.73c-2.23,10.44,13.06,4.43,11.32-3.47l4.28-15.91C11.89,32.63,6.16,37.65,6.06,51.73Z" />
+					<path class="cls-2"
+						d="M93.75,41c-2.61,10.47,3.27,26.11-19,30.45C62.34,73.83,23.8,69.5,17.82,50.34c0,0-2.76,24.88-2.76,24.88s37.21,9.08,80.78.37h0C95.3,77.21,102.88,53.91,93.75,41Z" />
+					<path class="cls-2" d="M18.46,48s-1.55,7.22-8.14,9S7.54,45.44,7.54,45.44L2.2,73.61l12.48,3Z" />
+					<path class="cls-3"
+						d="M83.79,52.14a3.64,3.64,0,0,0,3-4q-.9-8.28-1.71-16.71c0-.57-.09-1.12-.12-1.67a3.64,3.64,0,0,0-3.78-3.47c-10.31.37-20.73.63-31,1a3.68,3.68,0,0,0-3.5,3.23c-.39,3.1-.72,8.88-.13,18.82a3.66,3.66,0,0,0,3.5,3.45C57.42,53.08,75.29,53.57,83.79,52.14Z" />
+					<ellipse class="cls-4" cx="59.71" cy="31.78" rx="3.8" ry="2.16"
+						transform="translate(-3.32 7.22) rotate(-6.74)" />
+					<ellipse class="cls-4" cx="73.32" cy="32.27" rx="3.07" ry="7.54"
+						transform="translate(33.56 101.82) rotate(-84)" />
+					<path class="cls-5"
+						d="M96.64,76.53c-8.38,5.65-78.53,4.06-94.06-3,2.14-5.24.83-50.2,20.6-41.15C52.09-35.08,108.49,23.41,96.64,76.53Z" />
+					<path class="cls-5" d="M15.06,76.7c.94-28.77,8.12-44.35,8.12-44.35" />
+				</g>
+			</g>
+		</svg>
+		<button id="save">Save to .PNG</button>
+		<canvas></canvas>
+	</div>
+	<script type="text/javascript" src="https://unpkg.com/canvg@3.0.4/lib/umd.js"></script>
+	<script>
+		window.onload = () => {
+			// Simple example, see optional options for more configuration.
+			const pickr = Pickr.create({
+				el: '.color-picker',
+				theme: 'classic', // or 'monolith', or 'nano'
+
+				swatches: [
+					'rgba(244, 67, 54, 1)',
+					'rgba(233, 30, 99, 1)',
+					'rgba(156, 39, 176,1)',
+					'rgba(103, 58, 183, 1)',
+					'rgba(63, 81, 181,1)',
+					'rgba(33, 150, 243, 1)',
+					'rgba(3, 169, 244, 1)',
+					'rgba(0, 188, 212, 1)',
+					'rgba(0, 150, 136,1)',
+					'rgba(76, 175, 80,1)',
+					'rgba(139, 195, 74, 1)',
+					'rgba(205, 220, 57, 1)',
+					'rgba(255, 235, 59, 1)',
+					'rgba(255, 193, 7, 1)'
+				],
+
+				default: '#d7e1f1',
+
+				showAlways: true,
+				useAsButton: true,
+				inline: true,
+
+				components: {
+
+					// Main components
+					preview: true,
+					opacity: false,
+					hue: true,
+
+					// Input / output Options
+					interaction: {
+						hex: true,
+						rgba: true,
+						input: true,
+						clear: false,
+						save: true
+					}
+				}
+			});
+
+
+			const base = document.getElementsByClassName('cls-1');
+			const shade = document.getElementsByClassName('cls-2');
+			const alpha = 0.5;
+			const shadow = computeOverlayColor([63, 71, 78], [30, 31, 38]);
+
+			function computeOverlayColor(col1, col2) {
+				col3 = [
+					(col2[0] - col1[0] + col1[0] * alpha) / alpha,
+					(col2[1] - col1[1] + col1[1] * alpha) / alpha,
+					(col2[2] - col1[2] + col1[2] * alpha) / alpha
+				];
+				return col3;
+			}
+
+			function computeShadeColor(baseColor) {
+				r2 = baseColor[0] + (shadow[0] - baseColor[0]) * alpha;
+				g2 = baseColor[1] + (shadow[1] - baseColor[1]) * alpha;
+				b2 = baseColor[2] + (shadow[2] - baseColor[2]) * alpha;
+				return [r2, g2, b2];
+			}
+
+			pickr.on('change', (color, instance) => {
+				console.log('change', color);
+				for (var i = 0; i < base.length; i++) {
+					base[i].style.fill = color.toHEXA().toString();
+				}
+				shadeColor = computeShadeColor(color.toRGBA());
+				for (var i = 0; i < shade.length; i++) {
+					shade[i].style.fill = 'rgb(' + shadeColor[0] + ',' + shadeColor[1] + ',' + shadeColor[2] + ')';
+				}
+			});
+
+			save.onclick = function () {
+				const canvas = document.querySelector('canvas');
+				const ctx = canvas.getContext('2d');
+
+				v = canvg.Canvg.fromString(ctx, document.getElementsByTagName("svg")[0].outerHTML);
+				v.start()
+
+				const img = canvas.toDataURL("image/png");
+				saveBase64AsFile(img, "avatar.png");
+			}
+
+			function saveBase64AsFile(base64, fileName) {
+				var link = document.createElement("a");
+
+				document.body.appendChild(link);
+
+				link.setAttribute("href", base64);
+				link.setAttribute("download", fileName);
+				link.click();
+
+				document.body.removeChild(link);
+			}
+		};
+	</script>
+</body>
+
+</html>
