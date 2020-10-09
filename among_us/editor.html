@@ -209,28 +209,32 @@
 
 			pickr.on('change', (color, instance) => {
 				console.log('change', color);
-				for (var i = 0; i < base.length; i++) {
+				for (let i = 0; i < base.length; i++) {
 					base[i].style.fill = color.toHEXA().toString();
 				}
 				shadeColor = computeShadeColor(color.toRGBA());
-				for (var i = 0; i < shade.length; i++) {
+				for (let i = 0; i < shade.length; i++) {
 					shade[i].style.fill = 'rgb(' + shadeColor[0] + ',' + shadeColor[1] + ',' + shadeColor[2] + ')';
 				}
 			});
 
 			save.onclick = function () {
-				const canvas = document.querySelector('canvas');
-				const ctx = canvas.getContext('2d');
+				let canvas = document.querySelector('canvas');
+				let ctx = canvas.getContext('2d');
 
-				v = canvg.Canvg.fromString(ctx, document.getElementsByTagName("svg")[0].outerHTML);
-				v.start()
+				let svg = document.getElementsByTagName("svg")[0].cloneNode(true);
+				svg.setAttribute("width", 100);
+				svg.setAttribute("height", 100);
 
-				const img = canvas.toDataURL("image/png");
+				v = canvg.Canvg.fromString(ctx, svg.outerHTML);
+				v.start();
+
+				let img = canvas.toDataURL("image/png");
 				saveBase64AsFile(img, "avatar.png");
 			}
 
 			function saveBase64AsFile(base64, fileName) {
-				var link = document.createElement("a");
+				let link = document.createElement("a");
 
 				document.body.appendChild(link);
 
