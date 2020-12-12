@@ -1277,6 +1277,7 @@ img, span {vertical-align:middle;}
     width:var(--EB-Width);
     height:calc(var(--EB-Maximum-Height) %2B (var(--EBBS) * 3));
 }
+[src*='youtube']{position:absolute;top:-500px;left:-500px;}
 </style>
 <!------- MAIN GRID ------->
 <div id="quois-a">
@@ -1620,4 +1621,4 @@ img, span {vertical-align:middle;}
 </div><!--quois-b-->
 </div><!--quois-a-->
 <!--end main grid-->
-[youtube:000:000:sfATf-aMvbA:autoplay=1&loop=1&playlist=sfATf-aMvbA]
+[youtube:500:500:sfATf-aMvbA:autoplay=1&loop=1&playlist=sfATf-aMvbA]
