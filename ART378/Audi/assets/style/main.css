@@ -85,7 +85,7 @@ a.full-width {
   width: 211px;
   height: 3px;
   margin-top: -16px;
-  background: url(/assets/img/h-split.png);
+  background: url(../img/h-split.png);
   margin-bottom: 46px;
 }
 
@@ -163,7 +163,7 @@ header nav a.logo {
           flex: 100%;
   width: 69px;
   height: 24px;
-  background: url(/assets/img/logo.png) no-repeat;
+  background: url(../img/logo.png) no-repeat;
 }
 
 header nav a.menu {
@@ -172,7 +172,7 @@ header nav a.menu {
           flex: none;
   width: 30px;
   height: 21px;
-  background: url(/assets/img/menu.png) no-repeat;
+  background: url(../img/menu.png) no-repeat;
 }
 
 header .hero {
@@ -180,7 +180,7 @@ header .hero {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-top: 146px;
-  background: url(/assets/img/herobg.png) no-repeat;
+  background: url(../img/herobg.png) no-repeat;
   background-position-y: -80px;
 }
 
@@ -210,7 +210,7 @@ header .hero h1 {
 header .scroll-indicator {
   position: absolute;
   display: block;
-  background: url(/assets/img/scroll-indicator.png) no-repeat;
+  background: url(../img/scroll-indicator.png) no-repeat;
   height: 14px;
   width: 28px;
   bottom: 27px;
@@ -227,7 +227,7 @@ main .bg-white {
 }
 
 main .bg-white .transition-img {
-  background: url("/assets/img/Image 7.png") no-repeat;
+  background: url("../img/Image 7.png") no-repeat;
   width: 414px;
   height: 232px;
   display: block;
@@ -292,63 +292,63 @@ main .specs li strong span {
 }
 
 main .specs li.icon-gear {
-  background: url(/assets/img/gear.png) no-repeat;
+  background: url(../img/gear.png) no-repeat;
   background-position: bottom 45px center;
 }
 
 main .specs li.icon-stopwatch {
-  background: url(/assets/img/stopwatch.png) no-repeat;
+  background: url(../img/stopwatch.png) no-repeat;
   background-position: bottom 45px center;
 }
 
 main .specs li.icon-speedometer {
-  background: url(/assets/img/speedometer.png) no-repeat;
+  background: url(../img/speedometer.png) no-repeat;
   background-position: bottom 45px center;
 }
 
 main .specs li.icon-engine {
-  background: url(/assets/img/engine.png) no-repeat;
+  background: url(../img/engine.png) no-repeat;
   background-position: bottom 48px center;
 }
 
 main .specs li.icon-transmission {
-  background: url(/assets/img/transmission.png) no-repeat;
+  background: url(../img/transmission.png) no-repeat;
   background-position: bottom 38px center;
 }
 
 main .specs li.icon-acceleration {
-  background: url(/assets/img/acceleration.png) no-repeat;
+  background: url(../img/acceleration.png) no-repeat;
   background-position: bottom 38px center;
 }
 
 main .specs li.icon-speed {
-  background: url(/assets/img/speed.png) no-repeat;
+  background: url(../img/speed.png) no-repeat;
   background-position: bottom 38px center;
 }
 
 main .specs li.icon-torque {
-  background: url(/assets/img/torque.png) no-repeat;
+  background: url(../img/torque.png) no-repeat;
   background-position: bottom 38px center;
 }
 
 main .specs li.icon-horsepower {
-  background: url(/assets/img/horsepower.png) no-repeat;
+  background: url(../img/horsepower.png) no-repeat;
   background-position: bottom 38px center;
 }
 
 main .specs li.icon-displacement {
-  background: url(/assets/img/displacement.png) no-repeat;
+  background: url(../img/displacement.png) no-repeat;
   background-position: bottom 38px center;
 }
 
 main .specs li.icon-fuel {
-  background: url(/assets/img/fuel.png) no-repeat;
+  background: url(../img/fuel.png) no-repeat;
   background-position: bottom 38px center;
 }
 
 main .slider {
   position: relative;
-  background: url(/assets/img/slider.png) no-repeat;
+  background: url(../img/slider.png) no-repeat;
   width: 414px;
   height: 232px;
   left: -36px;
@@ -374,7 +374,7 @@ main .slider a.slider-nav {
           transform: translateX(-50%);
   position: absolute;
   bottom: -27px;
-  background: url(/assets/img/slider-nav.png) no-repeat;
+  background: url(../img/slider-nav.png) no-repeat;
   height: 18px;
   width: 71px;
 }
@@ -409,7 +409,7 @@ main .model-display li a::after {
   margin-left: 16px;
   display: inline-block;
   content: '';
-  background: url(/assets/img/more.png) no-repeat;
+  background: url(../img/more.png) no-repeat;
   width: 6px;
   height: 11px;
 }
@@ -431,11 +431,11 @@ main .actions span {
 }
 
 main .actions span.icon-qrcode {
-  background: url(/assets/img/qrcode.png) no-repeat top left;
+  background: url(../img/qrcode.png) no-repeat top left;
 }
 
 main .actions span.icon-pdf {
-  background: url(/assets/img/print.png) no-repeat top left;
+  background: url(../img/print.png) no-repeat top left;
 }
 
 footer {
@@ -463,22 +463,22 @@ footer .footer-icon-links .footer-icon {
 }
 
 footer .footer-icon-links .footer-icon.icon-mail {
-  background: url(/assets/img/mail.png) no-repeat;
+  background: url(../img/mail.png) no-repeat;
   background-position: top center;
 }
 
 footer .footer-icon-links .footer-icon.icon-help {
-  background: url(/assets/img/help.png) no-repeat;
+  background: url(../img/help.png) no-repeat;
   background-position: top center;
 }
 
 footer .footer-icon-links .footer-icon.icon-audi-small {
-  background: url(/assets/img/logo-footer.png) no-repeat;
+  background: url(../img/logo-footer.png) no-repeat;
   background-position: top center;
 }
 
 footer .footer-icon-links .footer-icon.icon-career {
-  background: url(/assets/img/career.png) no-repeat;
+  background: url(../img/career.png) no-repeat;
   background-position: top center;
 }
 
@@ -503,7 +503,7 @@ footer .socials {
 footer .socials .icon-socials {
   height: 20px;
   display: block;
-  background: url(/assets/img/socials.png) no-repeat top center;
+  background: url(../img/socials.png) no-repeat top center;
 }
 
 footer hr {
