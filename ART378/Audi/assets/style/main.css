@@ -1,0 +1,537 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 414px;
+  margin: 0 auto;
+  background: white;
+  overflow-y: scroll;
+}
+
+body {
+  --main: #1d1124;
+  --alt: #f51247;
+  --text: #ffffff;
+  background: var(--main);
+  color: var(--text);
+  position: relative;
+  font-family: 'ITC Avant Garde Gothic Std';
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+h1.short {
+  margin-bottom: 0;
+}
+
+p {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+a.btn-main {
+  font-size: 18px;
+  background: var(--alt);
+  border-radius: 22px;
+  color: var(--text);
+  padding: 9px 48px;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  margin-top: 25px;
+}
+
+a.btn-alt {
+  font-size: 18px;
+  background: transparent;
+  border-radius: 22px;
+  color: var(--text);
+  border: 1px solid var(--text);
+  padding: 9px 48px;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  margin-top: 25px;
+}
+
+a.full-width {
+  width: 100%;
+  text-align: center;
+  border-radius: 0;
+}
+
+.display {
+  background: var(--alt);
+  padding: 0 36px;
+}
+
+.h-split {
+  float: right;
+  display: block;
+  width: 211px;
+  height: 3px;
+  margin-top: -16px;
+  background: url(/assets/img/h-split.png);
+  margin-bottom: 46px;
+}
+
+header:not(.home) ~ main .h-split {
+  margin-bottom: 22px;
+}
+
+table {
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+table td:nth-child(2) {
+  text-align: right;
+}
+
+table tr.sub {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+table tr.sub td {
+  padding-left: 12px;
+  vertical-align: bottom;
+  line-height: 1.6em;
+}
+
+table.price {
+  margin: 16px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+hr {
+  opacity: 50%;
+  border-bottom: 0;
+}
+
+table + hr {
+  margin: 20px 0;
+}
+
+header {
+  position: relative;
+}
+
+header.home {
+  height: 896px;
+  position: relative;
+}
+
+header nav {
+  background: var(--alt);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  width: 100%;
+  padding: 0 36px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header nav a {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+header nav a.logo {
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  width: 69px;
+  height: 24px;
+  background: url(/assets/img/logo.png) no-repeat;
+}
+
+header nav a.menu {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  width: 30px;
+  height: 21px;
+  background: url(/assets/img/menu.png) no-repeat;
+}
+
+header .hero {
+  padding: 0 36px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-top: 146px;
+  background: url(/assets/img/herobg.png) no-repeat;
+  background-position-y: -80px;
+}
+
+header .hero span {
+  position: absolute;
+  -webkit-transform: translateY(-36px);
+          transform: translateY(-36px);
+  font-size: 97px;
+}
+
+header .hero span strong {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px var(--text);
+}
+
+header .hero img {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+header .hero h1 {
+  margin-bottom: 7px;
+}
+
+header .scroll-indicator {
+  position: absolute;
+  display: block;
+  background: url(/assets/img/scroll-indicator.png) no-repeat;
+  height: 14px;
+  width: 28px;
+  bottom: 27px;
+  left: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  animation: bob 1s ease-in-out infinite alternate-reverse;
+}
+
+main .bg-white {
+  background: var(--text);
+  color: var(--main);
+  padding-bottom: 1px;
+}
+
+main .bg-white .transition-img {
+  background: url("/assets/img/Image 7.png") no-repeat;
+  width: 414px;
+  height: 232px;
+  display: block;
+  margin-bottom: 42px;
+}
+
+main section {
+  padding: 0 36px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 37px;
+}
+
+main section:last-child {
+  margin-bottom: 0;
+}
+
+main .tech-specs .specs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+}
+
+main .tech-specs .specs li {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  margin-bottom: 13px;
+}
+
+main .specs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .specs li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: inline-block;
+  padding-top: 42px;
+  list-style: none;
+  text-align: center;
+}
+
+main .specs li span {
+  display: block;
+  font-weight: 100;
+}
+
+main .specs li strong {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+main .specs li strong span {
+  display: inline;
+  font-size: 12px;
+  font-weight: 100;
+}
+
+main .specs li.icon-gear {
+  background: url(/assets/img/gear.png) no-repeat;
+  background-position: bottom 45px center;
+}
+
+main .specs li.icon-stopwatch {
+  background: url(/assets/img/stopwatch.png) no-repeat;
+  background-position: bottom 45px center;
+}
+
+main .specs li.icon-speedometer {
+  background: url(/assets/img/speedometer.png) no-repeat;
+  background-position: bottom 45px center;
+}
+
+main .specs li.icon-engine {
+  background: url(/assets/img/engine.png) no-repeat;
+  background-position: bottom 48px center;
+}
+
+main .specs li.icon-transmission {
+  background: url(/assets/img/transmission.png) no-repeat;
+  background-position: bottom 38px center;
+}
+
+main .specs li.icon-acceleration {
+  background: url(/assets/img/acceleration.png) no-repeat;
+  background-position: bottom 38px center;
+}
+
+main .specs li.icon-speed {
+  background: url(/assets/img/speed.png) no-repeat;
+  background-position: bottom 38px center;
+}
+
+main .specs li.icon-torque {
+  background: url(/assets/img/torque.png) no-repeat;
+  background-position: bottom 38px center;
+}
+
+main .specs li.icon-horsepower {
+  background: url(/assets/img/horsepower.png) no-repeat;
+  background-position: bottom 38px center;
+}
+
+main .specs li.icon-displacement {
+  background: url(/assets/img/displacement.png) no-repeat;
+  background-position: bottom 38px center;
+}
+
+main .specs li.icon-fuel {
+  background: url(/assets/img/fuel.png) no-repeat;
+  background-position: bottom 38px center;
+}
+
+main .slider {
+  position: relative;
+  background: url(/assets/img/slider.png) no-repeat;
+  width: 414px;
+  height: 232px;
+  left: -36px;
+  text-align: center;
+  margin-bottom: 69px;
+}
+
+main .slider.no-img {
+  background: none;
+  width: auto;
+  height: auto;
+  left: 0;
+  padding-bottom: 38px;
+  margin-bottom: 34px;
+}
+
+main .slider.no-img .slider-nav {
+  bottom: 20px;
+}
+
+main .slider a.slider-nav {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+  bottom: -27px;
+  background: url(/assets/img/slider-nav.png) no-repeat;
+  height: 18px;
+  width: 71px;
+}
+
+main .model-display li {
+  list-style: none;
+  margin-bottom: 42px;
+}
+
+main .model-display li img {
+  position: relative;
+  left: -36px;
+  width: 414px;
+  height: 233px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+main .model-display li strong {
+  font-size: 18px;
+  font-weight: 600;
+  display: block;
+}
+
+main .model-display li a {
+  font-size: 14px;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+main .model-display li a::after {
+  margin-left: 16px;
+  display: inline-block;
+  content: '';
+  background: url(/assets/img/more.png) no-repeat;
+  width: 6px;
+  height: 11px;
+}
+
+main .actions {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto max-content;
+      grid-template-columns: auto -webkit-max-content;
+      grid-template-columns: auto max-content;
+}
+
+main .actions span {
+  padding-left: 40px;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+}
+
+main .actions span.icon-qrcode {
+  background: url(/assets/img/qrcode.png) no-repeat top left;
+}
+
+main .actions span.icon-pdf {
+  background: url(/assets/img/print.png) no-repeat top left;
+}
+
+footer {
+  padding: 30px 36px;
+  padding-top: 40px;
+}
+
+footer a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+footer .footer-icon-links {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+}
+
+footer .footer-icon-links .footer-icon {
+  display: block;
+  margin-bottom: 50px;
+  padding-top: 45px;
+  text-align: center;
+}
+
+footer .footer-icon-links .footer-icon.icon-mail {
+  background: url(/assets/img/mail.png) no-repeat;
+  background-position: top center;
+}
+
+footer .footer-icon-links .footer-icon.icon-help {
+  background: url(/assets/img/help.png) no-repeat;
+  background-position: top center;
+}
+
+footer .footer-icon-links .footer-icon.icon-audi-small {
+  background: url(/assets/img/logo-footer.png) no-repeat;
+  background-position: top center;
+}
+
+footer .footer-icon-links .footer-icon.icon-career {
+  background: url(/assets/img/career.png) no-repeat;
+  background-position: top center;
+}
+
+footer .footer-links {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  margin-bottom: 16px;
+  font-size: 12px;
+}
+
+footer .footer-links a {
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+footer .socials {
+  margin-bottom: 30px;
+}
+
+footer .socials .icon-socials {
+  height: 20px;
+  display: block;
+  background: url(/assets/img/socials.png) no-repeat top center;
+}
+
+footer hr {
+  margin-bottom: 30px;
+}
+
+footer .copy {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+@-webkit-keyframes bob {
+  0% {
+    padding-top: 0px;
+  }
+  100% {
+    padding-top: 10px;
+  }
+}
+
+@keyframes bob {
+  0% {
+    padding-top: 0px;
+  }
+  100% {
+    padding-top: 10px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

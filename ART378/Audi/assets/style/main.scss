@@ -1,0 +1,448 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	width: 414px;
+	margin: 0 auto;
+	background: white;
+	overflow-y: scroll;
+}
+
+body {
+	--main: #1d1124;
+	--alt: #f51247;
+	--text: #ffffff;
+	background: var(--main);
+	color: var(--text);
+	position: relative;
+	font-family: 'ITC Avant Garde Gothic Std';
+	overflow: hidden;
+}
+
+h1 {
+	font-size: 32px;
+	line-height: 42px;
+	font-weight: bold;
+	display: inline-block;
+	margin-bottom: 16px;
+	&.short {
+		margin-bottom: 0;
+	}
+}
+p {
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 400;
+}
+a.btn-main {
+	font-size: 18px;
+	background: var(--alt);
+	border-radius: 22px;
+	color: var(--text);
+	padding: 9px 48px;
+	text-decoration: none;
+	box-sizing: border-box;
+	position: relative;
+	display: inline-block;
+	margin-top: 25px;
+}
+a.btn-alt {
+	font-size: 18px;
+	background: transparent;
+	border-radius: 22px;
+	color: var(--text);
+	border: 1px solid var(--text);
+	padding: 9px 48px;
+	text-decoration: none;
+	box-sizing: border-box;
+	position: relative;
+	display: inline-block;
+	margin-top: 25px;
+} 
+
+a.full-width {
+	width: 100%;
+	text-align: center;
+	border-radius: 0;
+}
+
+.display {
+	background: var(--alt);
+	padding: 0 36px;
+}
+
+.h-split {
+	float: right;
+	display: block;
+	width: 211px;
+	height: 3px;
+	margin-top: -16px;
+	background: url(/assets/img/h-split.png);
+	margin-bottom: 46px;
+}
+header:not(.home) ~ main .h-split {
+	margin-bottom: 38px - 16px;
+}
+
+table {
+	width: 100%;
+	font-size: 16px;
+	line-height: 1.5em;
+	td:nth-child(2) {
+		text-align: right;
+	}
+	tr.sub {
+		td {
+			padding-left: 12px;
+			vertical-align: bottom;
+			line-height: 1.6em;
+		}
+		font-size: 12px;
+		font-weight: 500;
+	}
+	&.price {
+		margin: 16px 0;
+		font-size: 20px;
+		font-weight: bold;
+	}
+}
+hr {
+	opacity: 50%;
+	border-bottom: 0;
+}
+table + hr {
+	margin: 20px 0;
+}
+
+header {
+	position: relative;
+	&.home {
+		height: 896px;
+		position: relative;
+	}
+	nav {
+		background: var(--alt);
+		display: flex;
+		height: 80px;
+		width: 100%;
+		padding: 0 36px;
+		box-sizing: border-box;
+		a {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			&.logo {
+				flex: 100%;
+				width: 69px;
+				height: 24px;
+				background: url(/assets/img/logo.png) no-repeat;
+			}
+			&.menu {
+				flex: none;
+				width: 30px;
+				height: 21px;
+				background: url(/assets/img/menu.png) no-repeat;
+			}
+		}
+	}
+	.hero {
+		padding: 0 36px;
+		box-sizing: border-box;
+		padding-top: 226px - 80px;
+		background: url(/assets/img/herobg.png) no-repeat;
+		background-position-y: -80px;
+		span {
+			position: absolute;
+			transform: translateY(-36px);
+			font-size: 97px;
+			strong {
+				-webkit-text-fill-color: transparent;
+				-webkit-text-stroke: 2px var(--text);
+			}
+		}
+		img {
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		h1 {
+			margin-bottom: 7px;
+		}
+	}
+	.scroll-indicator {
+		position: absolute;
+		display: block;
+		background: url(/assets/img/scroll-indicator.png) no-repeat;
+		height: 14px;
+		width: 28px;
+		bottom: 27px;
+		left: 50%;
+		transform: translateY(-50%);
+		animation: bob 1s ease-in-out infinite alternate-reverse;
+	}
+}
+
+main {
+
+	.bg-white {
+		background: var(--text);
+		color: var(--main);
+		padding-bottom: 1px;
+
+		.transition-img {
+			background: url('/assets/img/Image\ 7.png') no-repeat;
+			width: 414px;
+			height: 232px;
+			display: block;
+			margin-bottom: 42px;
+		}
+	}
+
+	section {
+		padding: 0 36px;
+		box-sizing: border-box;
+		margin-bottom: 37px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.tech-specs .specs{
+		display: grid;
+		grid-template-columns: 50% 50%;
+		li {
+			flex: none;
+			margin-bottom: 13px;
+		}
+	}
+
+	.specs {
+		display: flex;
+		li {
+			flex: 1;
+			display: inline-block;
+			padding-top: 42px;
+			list-style: none;
+			text-align: center;
+			span {
+				display: block;
+				font-weight: 100;
+			}
+			strong {
+				font-size: 16px;
+				font-weight: bold;
+				span {
+					display: inline;
+					font-size: 12px;
+					font-weight: 100;
+				}
+			}
+
+			&.icon-gear {
+				background: url(/assets/img/gear.png) no-repeat;
+				background-position: bottom 45px center;
+			}
+			&.icon-stopwatch {
+				background: url(/assets/img/stopwatch.png) no-repeat;
+				background-position: bottom 45px center;
+			}
+			&.icon-speedometer {
+				background: url(/assets/img/speedometer.png) no-repeat;
+				background-position: bottom 45px center;
+			}
+			&.icon-engine {
+				background: url(/assets/img/engine.png) no-repeat;
+				background-position: bottom 48px center;
+			}
+			&.icon-transmission {
+				background: url(/assets/img/transmission.png) no-repeat;
+				background-position: bottom 38px center;
+			}
+			&.icon-acceleration {
+				background: url(/assets/img/acceleration.png) no-repeat;
+				background-position: bottom 38px center;
+			}
+			&.icon-speed {
+				background: url(/assets/img/speed.png) no-repeat;
+				background-position: bottom 38px center;
+			}
+			&.icon-torque {
+				background: url(/assets/img/torque.png) no-repeat;
+				background-position: bottom 38px center;
+			}
+			&.icon-horsepower {
+				background: url(/assets/img/horsepower.png) no-repeat;
+				background-position: bottom 38px center;
+			}
+			&.icon-displacement {
+				background: url(/assets/img/displacement.png) no-repeat;
+				background-position: bottom 38px center;
+			}
+			&.icon-fuel {
+				background: url(/assets/img/fuel.png) no-repeat;
+				background-position: bottom 38px center;
+			}
+		}
+	}
+
+	.slider {
+		position: relative;
+		background: url(/assets/img/slider.png) no-repeat;
+		width: 414px;
+		height: 232px;
+		left: -36px;
+		text-align: center;
+		margin-bottom: 69px;
+		&.no-img {
+			background: none;
+			width: auto;
+			height: auto;
+			left: 0;
+			padding-bottom: 38px;
+			margin-bottom: 34px;
+			.slider-nav {
+				bottom: 20px;
+			}
+		}
+		a.slider-nav {
+			transform: translateX(-50%);
+			position: absolute;
+			bottom: -18px - 9px;
+			background: url(/assets/img/slider-nav.png) no-repeat;
+			height: 18px;
+			width: 71px;
+		}
+	}
+
+	.model-display {
+		li {
+			list-style: none;
+			margin-bottom: 42px;
+			img {
+				position: relative;
+				left: -36px;
+				width: 414px;
+				height: 233px;
+				display: block;
+				margin-bottom: 8px;
+			}
+			strong {
+				font-size: 18px;
+				font-weight: 600;
+				display: block;
+			}
+			a {
+				font-size: 14px;
+				font-weight: 300;
+				text-decoration: none;
+				&::after {
+					margin-left: 16px;
+					display: inline-block;
+					content: '';
+					background: url(/assets/img/more.png) no-repeat;
+					width: 6px;
+					height: 11px;
+				}
+			}
+		}
+	}
+
+	.actions {
+		display: grid;
+		grid-template-columns: auto max-content;
+		span {
+			padding-left: 40px;
+			display: block;
+			height: 30px;
+			line-height: 30px;
+			font-size: 12px;
+			&.icon-qrcode {
+				background: url(/assets/img/qrcode.png) no-repeat top left;
+			}
+			&.icon-pdf {
+				background: url(/assets/img/print.png) no-repeat top left;
+			}
+		}
+	}
+}
+
+footer {
+	padding: 30px 36px;
+	padding-top: 40px;
+	a {
+		color: var(--text);
+		text-decoration: none;
+	}
+
+	.footer-icon-links {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		// margin-bottom: 20px;
+
+		.footer-icon {
+			display: block;
+			margin-bottom: 50px;
+			padding-top: 29px + 16px;
+			text-align: center;
+
+			&.icon-mail {
+				background: url(/assets/img/mail.png) no-repeat;
+				background-position: top center;
+			}
+			&.icon-help {
+				background: url(/assets/img/help.png) no-repeat;
+				background-position: top center;
+			}
+			&.icon-audi-small {
+				background: url(/assets/img/logo-footer.png) no-repeat;
+				background-position: top center;
+			}
+			&.icon-career {
+				background: url(/assets/img/career.png) no-repeat;
+				background-position: top center;
+			}
+		}
+	}
+
+	.footer-links {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		margin-bottom: 30px-14px;
+		font-size: 12px;
+		a {
+			margin-bottom: 14px;
+			text-align: center;
+		}
+	}
+
+	.socials {
+		margin-bottom: 30px;
+		.icon-socials {
+			height: 20px;
+			display: block;
+			background: url(/assets/img/socials.png) no-repeat top center;
+		}
+	}
+
+	hr {
+		margin-bottom: 30px;
+	}
+
+	.copy {
+		display: block;
+		font-size: 12px;
+		font-weight: 500;
+		text-align: center;
+	}
+}
+
+@keyframes bob {
+	0% {
+		padding-top: 0px;
+	}
+	100% {
+		padding-top: 10px;
+	}
+}
