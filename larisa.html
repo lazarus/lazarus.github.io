@@ -5,15 +5,15 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Austin xat.me</title>
-	<script language="javascript" type="text/javascript">
-		const urlParams = new URLSearchParams(window.location.search);
-		document.addEventListener("DOMContentLoaded", function() {
-			if(urlParams.get("song") == null) return;
-			// this function runs when the DOM is ready, i.e. when the document has been parsedaaaaaaaaa
-			document.getElementsByTagName("iframe")[0].src = "https://youtube.com/embed/"+urlParams.get("song")+"?loop=1&autoplay=1&fs=1&iv_load_policy=3&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0";
-		});
-	</script>
 </head>
+<script language="javascript" type="text/javascript">
+	const urlParams = new URLSearchParams(window.location.search);
+	document.addEventListener("DOMContentLoaded", function() {
+		if(urlParams.get("song") == null) return;
+		// this function runs when the DOM is ready, i.e. when the document has been parsedaaaaaaaaa
+		document.getElementsByTagName("iframe")[0].src = "https://youtube.com/embed/"+urlParams.get("song")+"?loop=1&autoplay=1&fs=1&iv_load_policy=3&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0";
+	});
+</script>
 <style>                                                                                                                                                               
 	/** CSS by Austin (638877683) **/                                                                                                                                        
 																																	  
