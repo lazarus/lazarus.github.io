@@ -402,29 +402,33 @@
 	</ul>
 	<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"></a>
 </body>
-<script defer>
-	var ul = document.querySelector("ul");
-	for (var i = ul.children.length; i >= 0; i--) {
-		ul.appendChild(ul.children[((Math.random() * i) | 0) + 1]);
-	}
-	var vc = document.querySelector(".cls-17");
-	var counter;
-	function setVC() {
-		const n = vc.textContent.match(/\d+/g).join("");
-		const num = Number(n);
-		const randChange = Math.max(Math.random() * 250 - 125, 9000 - num);
-		const fd = 1000 / 60;
-		const eoq = t => t * (2 - t);
-		const tf = Math.round(2000 / fd);
-		let f = 0;
-		counter = setInterval(() => {
-			f++;
-			const p = eoq(f / tf);
-			vc.textContent = ((num + (randChange * p)) | 0).toLocaleString(undefined);
-			if (f >= tf) clearInterval(counter);
-		}, fd);
-	}
-	setInterval(setVC, 3500);
+<script>
+	window.onload = function () {
+		function randList() {
+			var ul = document.querySelector("ul");
+			for (var i = ul.children.length; i >= 0; i--) {
+				ul.appendChild(ul.children[((Math.random() * i) | 0) + 1]);
+			}
+		};
+		var vc = document.querySelector(".cls-17");
+		function setVC() {
+			const n = vc.textContent.match(/\d+/g).join("");
+			const num = Number(n);
+			const randChange = Math.max(Math.random() * 250 - 125, 9000 - num);
+			const fd = 1000 / 60;
+			const eoq = t => t * (2 - t);
+			const tf = Math.round(2000 / fd);
+			let f = 0;
+			const counter = setInterval(() => {
+				f++;
+				const p = eoq(f / tf);
+				vc.textContent = ((num + (randChange * p)) | 0).toLocaleString(undefined);
+				if (f >= tf) clearInterval(counter);
+			}, fd);
+		}
+		setInterval(setVC, 3500);
+		randList();
+	};
 </script>
 
 </html>
