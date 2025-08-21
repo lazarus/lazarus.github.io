@@ -407,23 +407,37 @@ tag.src = "https://www.youtube.com/iframe_api";
 document.head.appendChild(tag);
 
 let player;
+let playerReady = false;
+let userInteracted = false;
 
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player("ytplayer");
-document.addEventListener("click", enableSoundOnce, { once: true });
-document.addEventListener("keydown", enableSoundOnce, { once: true });
-document.addEventListener("touchstart", enableSoundOnce, { once: true });
+  player = new YT.Player("ytplayer", {
+    events: {
+      onReady: () => {
+        playerReady = true;
+      }
+    }
+  });
 }
 
-function enableSoundOnce() {
-  if (player && player.unMute) {
+function tryUnmute() {
+  if (playerReady && userInteracted && player.isMuted()) {
     player.unMute();
     player.playVideo();
-    document.removeEventListener("click", enableSoundOnce);
-    document.removeEventListener("keydown", enableSoundOnce);
-    document.removeEventListener("touchstart", enableSoundOnce);
   }
 }
+
+function handleUserInteraction() {
+  userInteracted = true;
+  tryUnmute();
+  document.removeEventListener("click", handleUserInteraction);
+  document.removeEventListener("keydown", handleUserInteraction);
+  document.removeEventListener("touchstart", handleUserInteraction);
+}
+
+document.addEventListener("click", handleUserInteraction);
+document.addEventListener("keydown", handleUserInteraction);
+document.addEventListener("touchstart", handleUserInteraction);
 </script>
 </body>
 <script>
