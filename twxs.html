@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -373,15 +372,16 @@
 			</g>
 		</svg>
 	</div>
-	<iframe id="ytplayer" width="692" height="437"
-	    src="https://www.youtube.com/embed/j1RrvoAcN4g?list=PLmQg9VgF3TsgzvJjMHUuoqYrqMm8Rarn3&loop=1&autoplay=1&mute=1&enablejsapi=1&fs=1&iv_load_policy=3&showinfo=1&rel=0&cc_load_policy=0"
-	    frameborder="0">
-	</iframe>
+	<div id="video-container" style="position: relative; width: 692px; height: 437px;">
+		<iframe id="ytplayer" width="692" height="437"
+			src="https://www.youtube.com/embed/j1RrvoAcN4g?list=PLmQg9VgF3TsgzvJjMHUuoqYrqMm8Rarn3&loop=1&autoplay=1&mute=1&enablejsapi=1&fs=1&iv_load_policy=3&showinfo=1&rel=0&cc_load_policy=0"
+			frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+		</iframe>
+	</div>
 	<img src="https://xatimg.com/image/iT4krbkYBFp6.jpg?1" />
 	<ul>
 		<li>
-			<a href="https://xat.me/lana" target="_blank"><img
-					src="https://xatimg.com/image/jrHT60o4iwAC.jpg" /></a>
+			<a href="https://xat.me/lana" target="_blank"><img src="https://xatimg.com/image/jrHT60o4iwAC.jpg" /></a>
 		</li>
 		<li>
 			<a href="https://xat.me/jungkook" target="_blank"><img
@@ -401,6 +401,46 @@
 		</li>
 	</ul>
 	<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"></a>
+	<script>
+		let tag = document.createElement("script");
+		tag.src = "https://www.youtube.com/iframe_api";
+		document.head.appendChild(tag);
+
+		let player;
+
+		function onYouTubeIframeAPIReady() {
+			player = new YT.Player("ytplayer");
+		}
+
+		const overlay = document.createElement("div");
+		overlay.innerText = "🔊 UNMUTE";
+		overlay.style.position = "absolute";
+		overlay.style.top = "0";
+		overlay.style.left = "0";
+		overlay.style.width = "100%";
+		overlay.style.height = "100%";
+		overlay.style.background = "rgba(0,0,0,0.5)";
+		overlay.style.color = "white";
+		overlay.style.display = "flex";
+		overlay.style.justifyContent = "center";
+		overlay.style.alignItems = "center";
+		overlay.style.fontSize = "2em";
+		overlay.style.cursor = "pointer";
+		overlay.style.userSelect = "none";
+		overlay.style.zIndex = "10";
+		overlay.style.fontFamily = "Karla";
+
+		const container = document.getElementById("video-container");
+		container.appendChild(overlay);
+
+		overlay.addEventListener("click", function () {
+			if (player && player.unMute) {
+				player.unMute();
+				player.playVideo();
+				overlay.style.display = "none";
+			}
+		});
+	</script>
 </body>
 <script>
 	window.onload = function () {
@@ -409,20 +449,20 @@
 			for (var i = ul.children.length; i >= 0; i--) {
 				ul.appendChild(ul.children[((Math.random() * i) | 0) + 1]);
 			}
-		};
+		}
 		var vc = document.querySelector(".cls-17");
 		function setVC() {
 			const n = vc.textContent.match(/\d+/g).join("");
 			const num = Number(n);
 			const randChange = Math.max(Math.random() * 250 - 125, 9000 - num);
 			const fd = 1000 / 60;
-			const eoq = t => t * (2 - t);
+			const eoq = (t) => t * (2 - t);
 			const tf = Math.round(2000 / fd);
 			let f = 0;
 			const counter = setInterval(() => {
 				f++;
 				const p = eoq(f / tf);
-				vc.textContent = ((num + (randChange * p)) | 0).toLocaleString(undefined);
+				vc.textContent = ((num + randChange * p) | 0).toLocaleString(undefined);
 				if (f >= tf) clearInterval(counter);
 			}, fd);
 		}
