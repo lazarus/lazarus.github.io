@@ -401,44 +401,6 @@
 		</li>
 	</ul>
 	<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"></a>
-<script>
-let tag = document.createElement("script");
-tag.src = "https://www.youtube.com/iframe_api";
-document.head.appendChild(tag);
-
-let player;
-let playerReady = false;
-let userInteracted = false;
-
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player("ytplayer", {
-    events: {
-      onReady: () => {
-        playerReady = true;
-      }
-    }
-  });
-}
-
-function tryUnmute() {
-  if (playerReady && userInteracted && player.isMuted()) {
-    player.unMute();
-    player.playVideo();
-  }
-}
-
-function handleUserInteraction() {
-  userInteracted = true;
-  tryUnmute();
-  document.removeEventListener("click", handleUserInteraction);
-  document.removeEventListener("keydown", handleUserInteraction);
-  document.removeEventListener("touchstart", handleUserInteraction);
-}
-
-document.addEventListener("click", handleUserInteraction);
-document.addEventListener("keydown", handleUserInteraction);
-document.addEventListener("touchstart", handleUserInteraction);
-</script>
 </body>
 <script>
 	window.onload = function () {
