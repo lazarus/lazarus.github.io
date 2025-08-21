@@ -413,22 +413,34 @@
 		}
 
 		const overlay = document.createElement("div");
-		overlay.innerText = "🔊 UNMUTE";
-		overlay.style.position = "absolute";
-		overlay.style.top = "0";
-		overlay.style.left = "0";
-		overlay.style.width = "100%";
-		overlay.style.height = "100%";
-		overlay.style.background = "rgba(0,0,0,0.5)";
-		overlay.style.color = "white";
-		overlay.style.display = "flex";
-		overlay.style.justifyContent = "center";
-		overlay.style.alignItems = "center";
-		overlay.style.fontSize = "2em";
-		overlay.style.cursor = "pointer";
-		overlay.style.userSelect = "none";
-		overlay.style.zIndex = "10";
-		overlay.style.fontFamily = "Karla";
+		overlay.innerText = "UNMUTE";
+		Object.assign(overlay.style, {
+			position: "absolute",
+			top: "0",
+			left: "0",
+			width: "100%",
+			height: "100%",
+			background: "rgba(0,0,0,0.4)",
+			color: "#ffffff",
+			display: "flex",
+			justifyContent: "center",
+			alignItems: "center",
+			fontFamily: "'Karla', sans-serif",
+			fontWeight: "700",
+			fontSize: "2rem",
+			letterSpacing: "1px",
+			cursor: "pointer",
+			userSelect: "none",
+			zIndex: "10",
+			transition: "background 0.3s ease, color 0.3s ease"
+		});
+		
+		overlay.addEventListener("mouseenter", () => {
+			overlay.style.background = "rgba(0,0,0,0.6)";
+		});
+		overlay.addEventListener("mouseleave", () => {
+			overlay.style.background = "rgba(0,0,0,0.4)";
+		});
 
 		const container = document.getElementById("video-container");
 		container.appendChild(overlay);
