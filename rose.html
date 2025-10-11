@@ -494,6 +494,7 @@
       border: 1px solid var(--border);
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
     }
 
     .friend h3 {
@@ -670,8 +671,7 @@
               </svg>
             </div>
             <div class="hero-img" aria-label="Varesa artwork">
-              <img class="img" src="https://img.game8.co/4110656/16d21379c455f41427cfda050c95aa1c.png/show"
-                alt="Varesa full-body transparent artwork" />
+              <img class="img" src="https://img.game8.co/4110656/16d21379c455f41427cfda050c95aa1c.png/show" />
             </div>
           </div>
 
@@ -710,10 +710,10 @@
             </dl>
 
             <div class="row" aria-label="badges">
-              <span class="chip">🎂 Etiqueta de ejemplo</span>
-              <span class="chip">🤭 Otra etiqueta</span>
-              <span class="chip">😵‍💫 Tercer punto</span>
-              <span class="chip">👽 Cuarto punto</span>
+              <span class="chip">🎂 22 de diciembre</span>
+              <span class="chip">♑ Capricornio</span>
+              &nbsp;
+              <span class="chip">🎮 Rosesitta</span>
             </div>
           </div>
         </div>
@@ -723,6 +723,37 @@
       <section class="sheet" role="tabpanel" id="panel-friends" aria-labelledby="tab-friends" data-active="false">
         <h2 style="margin:0 0 10px; font-family:Cinzel, serif; letter-spacing:.6px;">Amigos</h2>
         <div class="grid">
+          <a class="friend" href="https://xat.me/CheeseOnToast " target="_blank" rel="noopener">
+            <div class="avatar" style="background-image:url('https://xatimg.com/image/iUI8sm879Nes.png')"></div>
+            <div>
+              <h3>CheeseOnToast</h3><small>cheese</small>
+            </div>
+          </a>
+          <a class="friend" href="https://xat.me/Lenin" target="_blank" rel="noopener">
+            <div class="avatar" style="background-image:url('https://xatimg.com/image/2L3sZhbD1x0u.png')"></div>
+            <div>
+              <h3>Lenin</h3><small>len</small>
+            </div>
+          </a>
+          <a class="friend" href="https://xat.me/Selene" target="_blank" rel="noopener">
+            <div class="avatar"
+              style="background-image:url('https://fexbots.com/Includes/Images/icons/staffAvatars/13016.png')"></div>
+            <div>
+              <h3>Selene</h3><small>sele</small>
+            </div>
+          </a>
+          <a class="friend" href="https://xat.me/Marek" target="_blank" rel="noopener">
+            <div class="avatar" style="background-image:url('https://xatimg.com/image/eFr1zMsaXpb9.png')"></div>
+            <div>
+              <h3>Marek</h3>
+            </div>
+          </a>
+          <a class="friend" href="https://xat.me/FEXBot" target="_blank" rel="noopener">
+            <div class="avatar" style="background-image:url('https://xatimg.com/image/mlRisOkUMCUg.png')"></div>
+            <div>
+              <h3>FEXBot</h3><small>fexy</small>
+            </div>
+          </a>
           <a class="friend" href="https://xat.me/Jadiction" target="_blank" rel="noopener">
             <div class="avatar" style="background-image:url('https://github.com/Jadiction.png?size=160')"></div>
             <div>
@@ -744,8 +775,7 @@
         <h2 style="margin:0 0 10px; font-family:Cinzel, serif; letter-spacing:.6px;">Galería & Enlaces</h2>
         <div class="gallery">
           <figure class="poster">
-            <img src="https://img.game8.co/4110656/16d21379c455f41427cfda050c95aa1c.png/show"
-              alt="Varesa full-body (transparent) from Game8" />
+            <img src="https://img.game8.co/4110656/16d21379c455f41427cfda050c95aa1c.png/show" />
             <figcaption class="cap">Varesa</figcaption>
           </figure>
           <div class="list">
@@ -807,7 +837,7 @@
       try {
         await navigator.clipboard.writeText("/f" + id + " Rose");
         const btn = document.getElementById('copyId'); const old = btn.innerHTML;
-        btn.innerHTML = 'Copied!'; setTimeout(() => btn.innerHTML = old, 1200);
+        btn.innerHTML = '¡Copiada!'; setTimeout(() => btn.innerHTML = old, 1200);
       } catch { alert('Copy failed'); }
     });
 
