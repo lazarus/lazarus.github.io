@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rose</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;600;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* =========================
+   THEME (Genshin-style)
+   ========================= */
+    :root {
+      --bg-1: #0b1020;
+      --bg-2: #121a31;
+      --text: #e9eef7;
+      --muted: #a9b2c9;
+      --border: rgba(255, 255, 255, .18);
+      --glass: rgba(255, 255, 255, .06);
+      --glass-2: rgba(255, 255, 255, .1);
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+
+      --gold: #d7b876;
+      --gold-2: #b89458;
+      --gold-ghost: rgba(215, 184, 118, .16);
+      --elec: #a877ff;
+      --elec-2: #6f3de0;
+      --elec-ghost: rgba(168, 119, 255, .18);
+
+      --r-lg: 18px;
+      --r-md: 14px;
+      --r-sm: 10px;
+      --ring: 0 0 0 2px var(--gold-ghost), 0 0 0 6px rgba(215, 184, 118, .08);
+
+      /* Images */
+      --hero-full: url('https://img.game8.co/4110656/16d21379c455f41427cfda050c95aa1c.png/show');
+      /* Varesa PNG */
+      --friend-jad: url('https://github.com/Jadiction.png?size=160');
+      --friend-ross: url('https://github.com/Rossesitta.png?size=160');
+      --friend-laz: url('https://github.com/lazarus.png?size=160');
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-1: #f5f7fb;
+        --bg-2: #ecf0f7;
+        --text: #1d2642;
+        --muted: #506089;
+        --border: rgba(10, 10, 20, .18);
+        --glass: rgba(10, 10, 20, .06);
+        --glass-2: rgba(10, 10, 20, .12);
+        --shadow: 0 10px 30px rgba(0, 0, 0, .12);
+      }
+    }
+
+    /* =========================
+   LAYOUT & BACKDROP
+   ========================= */
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(1100px 700px at 10% -10%, #1f3d76 0%, transparent 60%),
+        radial-gradient(1200px 800px at 110% 10%, #1b2b4e 0%, transparent 55%),
+        linear-gradient(160deg, var(--bg-1), var(--bg-2));
+      background-attachment: fixed;
+    }
+
+    #snow {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 1180px;
+      margin: auto;
+      padding: clamp(14px, 4vw, 28px);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .crest {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(80% 80% at 30% 20%, rgba(255, 255, 255, .2), rgba(255, 255, 255, .04));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .crest svg {
+      width: 26px;
+      height: 26px;
+      fill: var(--gold);
+    }
+
+    .title h1 {
+      margin: 0;
+      font-family: Cinzel, serif;
+      font-weight: 800;
+      letter-spacing: .6px;
+      font-size: clamp(22px, 2.4vw, 32px);
+    }
+
+    .title p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 1px solid var(--border);
+      background: var(--glass);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      transition: transform .15s ease, background .15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: var(--glass-2);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--gold);
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 8px;
+      padding: 6px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, 0));
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+    }
+
+    .tab {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      font-weight: 800;
+      padding: 10px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .tab[aria-selected="true"] {
+      background:
+        linear-gradient(180deg, rgba(215, 184, 118, .28), rgba(215, 184, 118, .08)),
+        radial-gradient(60% 100% at 50% 0%, rgba(215, 184, 118, .18), transparent 60%);
+      box-shadow: inset 0 0 0 1px var(--gold-ghost), 0 6px 18px rgba(215, 184, 118, .12);
+    }
+
+    .panels {
+      margin-top: 16px;
+    }
+
+    [role="tabpanel"] {
+      display: none;
+      animation: fade .35s ease both;
+    }
+
+    [role="tabpanel"][data-active="true"] {
+      display: block;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(6px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    /* =========================
+   SHEET & CHARACTER STAGE
+   ========================= */
+    .sheet {
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
+      backdrop-filter: blur(12px);
+      padding: clamp(16px, 2.8vw, 24px);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 950px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* LEFT: Stage */
+    .stage {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--r-lg);
+      min-height: 520px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(400px 240px at 20% 15%, var(--elec-ghost), transparent 70%),
+        radial-gradient(600px 380px at 80% 10%, rgba(255, 255, 255, .08), transparent 60%),
+        linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+    }
+
+    .stage .ring {
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 82%;
+      background:
+        radial-gradient(closest-side, rgba(255, 255, 255, .08), transparent 70%),
+        radial-gradient(closest-side, var(--elec-ghost), transparent 65%);
+      clip-path: ellipse(65% 80% at 50% 100%);
+    }
+
+    .stage .element {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: radial-gradient(70% 70% at 30% 20%, rgba(255, 255, 255, .28), rgba(255, 255, 255, .06));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .stage .element svg {
+      width: 28px;
+      height: 28px;
+      fill: var(--elec);
+    }
+
+    .stage .stars {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      display: flex;
+      gap: 4px;
+      z-index: 2;
+    }
+
+    .stage .stars svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--gold);
+    }
+
+    /* FIX: portrait scaling by height, bottom-centered */
+    .stage .hero-img {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: end center;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .stage .hero-img .img {
+      height: 100%;
+      max-height: 100%;
+      width: auto;
+      max-width: min(92%, 520px);
+      object-fit: contain;
+      object-position: bottom center;
+      display: block;
+      transform: translateY(6px);
+    }
+
+    /* RIGHT: Sheet details */
+    .profile-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .name h2 {
+      margin: 0;
+      font-family: Cinzel, serif;
+      font-weight: 800;
+      letter-spacing: .7px;
+      font-size: clamp(20px, 2.2vw, 28px);
+    }
+
+    .idchip {
+      font-family: ui-monospace, Menlo, Consolas, Monaco, "SF Mono", monospace;
+      font-weight: 800;
+      letter-spacing: .4px;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--gold-2);
+      background: rgba(215, 184, 118, .14);
+      border: 1px solid var(--border);
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    @media (max-width:560px) {
+      .meta {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .info {
+      padding: 12px;
+      border-radius: var(--r-md);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+      border: 1px solid var(--border);
+    }
+
+    .info dt {
+      font-size: 12px;
+      letter-spacing: .4px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .info dd {
+      margin: 0;
+      font-family: Cinzel, serif;
+      font-weight: 800;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: var(--r-md);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .01));
+      border: 1px solid var(--border);
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+      font-weight: 700;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      background: linear-gradient(180deg, rgba(168, 119, 255, .2), rgba(168, 119, 255, .06));
+      border: 1px solid rgba(168, 119, 255, .22);
+    }
+
+    .pill svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--elec);
+    }
+
+    .links {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .linkbtn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      cursor: pointer;
+      padding: 10px 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--text);
+      background: linear-gradient(180deg, rgba(215, 184, 118, .24), rgba(215, 184, 118, .06));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .linkbtn svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--gold);
+    }
+
+    /* FRIENDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width:900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width:560px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .friend {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      text-decoration: none;
+      color: var(--text);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+      transition: transform .15s ease, background .15s ease;
+    }
+
+    .friend:hover {
+      transform: translateY(-2px);
+      background: var(--glass-2);
+    }
+
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      overflow: hidden;
+      flex: 0 0 auto;
+      border: 1px solid var(--border);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .friend h3 {
+      margin: 0 0 4px;
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .friend small {
+      color: var(--muted);
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 14px;
+    }
+
+    @media (max-width:950px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .poster {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      min-height: 340px;
+      background: var(--glass);
+      max-height: 50vh;
+    }
+
+    .poster img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+    }
+
+    .cap {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, .28);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+
+    .list {
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+    }
+
+    .list h4 {
+      margin: 0 0 10px;
+      font-family: Cinzel, serif;
+      letter-spacing: .5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .list ul {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.8;
+    }
+
+    .list a {
+      color: var(--gold);
+    }
+
+    .credits {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .credits a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Snow -->
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <div class="wrap">
+    <!-- Header -->
+    <div class="header">
+      <div class="brand">
+        <div class="crest" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2l2.6 6.2L21 9l-5 4.2 1.6 6.8L12 16.6 6.4 20 8 13.2 3 9l6.4-.8z" />
+          </svg>
+        </div>
+        <div class="title">
+          <h1>Rose</h1>
+          <p>FEX Manager • ID <span id="id-text">1100011</span></p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="btn" id="copyId" title="Copy Friend Code">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M16 1H4c-1.1 0-2 .9-2 2v12h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+          </svg>
+          Copiar código de amigo
+        </button>
+
+        <button class="btn" id="toggleSnow" title="Toggle snow">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M11 1h2v4l1.5-.9 1 1.7L13 7l2.5 1.5-1 1.7L12 9v4h2l1-1.7 1.7 1-1 1.7h2v2h-2l1 1.7-1.7 1-1-1.7h-2v4h-2v-4l-1.5.9-1-1.7L11 17l-2.5-1.5 1-1.7L11 13V9H9l-1 1.7-1.7-1 1-1.7H5V5h2L6 3.3 7.7 2.3 8.7 4H11V1z" />
+          </svg>
+          Nieve
+        </button>
+
+        <div class="tabs" role="tablist" aria-label="Sections">
+          <button class="tab" role="tab" aria-selected="true" aria-controls="panel-profile"
+            id="tab-profile">Perfil</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel-friends"
+            id="tab-friends">Amigos</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel-gallery" id="tab-gallery">Galería &
+            Enlaces</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panels -->
+    <div class="panels">
+
+      <!-- PROFILE -->
+      <section class="sheet" role="tabpanel" id="panel-profile" aria-labelledby="tab-profile" data-active="true">
+        <div class="hero">
+          <!-- LEFT: Stage with portrait -->
+          <div class="stage">
+            <div class="ring" aria-hidden="true"></div>
+            <div class="element" title="Electro (theme)">
+              <svg viewBox="0 0 24 24">
+                <path d="M13.8 2L5 12.2h4.9L8.2 22 19 11.8h-5L13.8 2z" />
+              </svg>
+            </div>
+            <div class="stars" aria-label="five-star rarity">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2l2.6 6.2L21 9l-5 4.2 1.6 6.8L12 16.6 6.4 20 8 13.2 3 9l6.4-.8z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2l2.6 6.2L21 9l-5 4.2 1.6 6.8L12 16.6 6.4 20 8 13.2 3 9l6.4-.8z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2l2.6 6.2L21 9l-5 4.2 1.6 6.8L12 16.6 6.4 20 8 13.2 3 9l6.4-.8z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2l2.6 6.2L21 9l-5 4.2 1.6 6.8L12 16.6 6.4 20 8 13.2 3 9l6.4-.8z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2l2.6 6.2L21 9l-5 4.2 1.6 6.8L12 16.6 6.4 20 8 13.2 3 9l6.4-.8z" />
+              </svg>
+            </div>
+            <div class="hero-img" aria-label="Varesa artwork">
+              <img class="img" src="https://img.game8.co/4110656/16d21379c455f41427cfda050c95aa1c.png/show"
+                alt="Varesa full-body transparent artwork" />
+            </div>
+          </div>
+
+          <!-- RIGHT: Details -->
+          <div>
+            <div class="profile-head">
+              <div class="name">
+                <h2>Rose</h2>
+                <span class="idchip">ID: 1100011</span>
+              </div>
+            </div>
+
+            <div class="row" aria-label="vision & weapon">
+              <span class="pill" title="Electro">
+                <svg viewBox="0 0 24 24">
+                  <path d="M13.8 2L5 12.2h4.9L8.2 22 19 11.8h-5L13.8 2z" />
+                </svg> Electro
+              </span>
+              <span class="pill" title="Catalyst">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 5h16v2H4V5zm2 4h12v7c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V9zm3 1v7h6v-7H9z" />
+                </svg> Catalyst
+              </span>
+              <span class="pill" title="Rarity">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2l2.6 6.2L21 9l-5 4.2 1.6 6.8L12 16.6 6.4 20 8 13.2 3 9l6.4-.8z" />
+                </svg> ★★★★★
+              </span>
+            </div>
+
+            <dl class="meta">
+              <div class="info">
+                <dt>About Me</dt>
+                <dd>Sigue los petalos de rosa donde vayan.</dd>
+              </div>
+            </dl>
+
+            <div class="row" aria-label="badges">
+              <span class="chip">🎂 Etiqueta de ejemplo</span>
+              <span class="chip">🤭 Otra etiqueta</span>
+              <span class="chip">😵‍💫 Tercer punto</span>
+              <span class="chip">👽 Cuarto punto</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FRIENDS -->
+      <section class="sheet" role="tabpanel" id="panel-friends" aria-labelledby="tab-friends" data-active="false">
+        <h2 style="margin:0 0 10px; font-family:Cinzel, serif; letter-spacing:.6px;">Amigos</h2>
+        <div class="grid">
+          <a class="friend" href="https://xat.me/Jadiction" target="_blank" rel="noopener">
+            <div class="avatar" style="background-image:url('https://github.com/Jadiction.png?size=160')"></div>
+            <div>
+              <h3>Jadiction</h3><small>jad</small>
+            </div>
+          </a>
+          <a class="friend" href="https://xat.me/Austin" target="_blank" rel="noopener">
+            <div class="avatar" style="background-image:url('https://github.com/lazarus.png?size=160')"></div>
+            <div>
+              <h3>Austin</h3><small>oj</small>
+            </div>
+          </a>
+          <!-- Add more by duplicating -->
+        </div>
+      </section>
+
+      <!-- GALLERY & LINKS -->
+      <section class="sheet" role="tabpanel" id="panel-gallery" aria-labelledby="tab-gallery" data-active="false">
+        <h2 style="margin:0 0 10px; font-family:Cinzel, serif; letter-spacing:.6px;">Galería & Enlaces</h2>
+        <div class="gallery">
+          <figure class="poster">
+            <img src="https://img.game8.co/4110656/16d21379c455f41427cfda050c95aa1c.png/show"
+              alt="Varesa full-body (transparent) from Game8" />
+            <figcaption class="cap">Varesa</figcaption>
+          </figure>
+          <div class="list">
+            <h4>
+              <svg style="width:18px;height:18px;fill:var(--gold);" viewBox="0 0 24 24">
+                <path d="M3 12l7-9 7 9-7 9-7-9z" />
+              </svg>
+              Enlaces útiles
+            </h4>
+            <ul>
+              <li><a href="https://fexbots.com/trial" target="_blank" rel="noopener">FEXBots</a></li>
+              <li><a href="https://forum.xat.com/profile/37253/" target="_blank" rel="noopener">Rose - xat forum</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="credits">
+      xatspace by <a href="https://xat.me/austin" target="_blank">austin</a>
+    </div>
+  </div>
+
+  <script>
+    /* Tabs (accessible + hash) */
+    (function () {
+      const tabs = [...document.querySelectorAll('[role="tab"]')];
+      const panels = [...document.querySelectorAll('[role="tabpanel"]')];
+      function activate(id, pushHash = true) {
+        tabs.forEach(b => b.setAttribute('aria-selected', (b.getAttribute('aria-controls') === id).toString()));
+        panels.forEach(p => p.dataset.active = (p.id === id).toString());
+        if (pushHash) location.hash = id.replace('panel-', '');
+      }
+      tabs.forEach(btn => {
+        btn.addEventListener('click', () => activate(btn.getAttribute('aria-controls')));
+        btn.addEventListener('keydown', e => {
+          const i = tabs.indexOf(btn);
+          if (e.key === 'ArrowRight') { (tabs[i + 1] || tabs[0]).focus(); }
+          if (e.key === 'ArrowLeft') { (tabs[i - 1] || tabs.at(-1)).focus(); }
+          if (e.key === 'Home') { tabs[0].focus(); }
+          if (e.key === 'End') { tabs.at(-1).focus(); }
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(btn.getAttribute('aria-controls')); }
+        });
+      });
+      function fromHash() {
+        const h = (location.hash || '#profile').slice(1);
+        const id = 'panel-' + h;
+        if (panels.some(p => p.id === id)) activate(id, false);
+      }
+      addEventListener('hashchange', fromHash);
+      fromHash();
+    })();
+
+    /* Copy ID */
+    document.getElementById('copyId').addEventListener('click', async () => {
+      const id = document.getElementById('id-text').textContent.trim();
+      try {
+        await navigator.clipboard.writeText("/f" + id + " Rose");
+        const btn = document.getElementById('copyId'); const old = btn.innerHTML;
+        btn.innerHTML = 'Copied!'; setTimeout(() => btn.innerHTML = old, 1200);
+      } catch { alert('Copy failed'); }
+    });
+
+    /* Snow effect */
+    (function () {
+      const c = document.getElementById('snow');
+      const ctx = c.getContext('2d', { alpha: true });
+      let flakes = [], running = true, width = 0, height = 0, dpr = Math.max(1, window.devicePixelRatio || 1);
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function resize() {
+        width = innerWidth; height = innerHeight;
+        c.width = Math.floor(width * dpr); c.height = Math.floor(height * dpr);
+        c.style.width = width + 'px'; c.style.height = height + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0); spawn();
+      }
+      function spawn() {
+        const count = Math.min(200, Math.floor(width * height / 12000));
+        flakes = Array.from({ length: count }, () => ({
+          x: Math.random() * width, y: Math.random() * height,
+          r: .6 + Math.random() * 2.1, s: .3 + Math.random() * 1.1, a: .5 + Math.random() * .5,
+          w: -0.5 + Math.random() * 1.0, p: Math.random() * Math.PI * 2
+        }));
+      }
+      function step(t) {
+        if (!running) return;
+        ctx.clearRect(0, 0, width, height);
+        ctx.globalCompositeOperation = 'lighter';
+        for (const f of flakes) {
+          const sway = reduced ? 0 : Math.sin(f.p + t * 0.001) * 0.3;
+          f.x += f.w + sway; f.y += f.s;
+          if (f.y > height + 6) { f.y = -6; f.x = Math.random() * width; }
+          if (f.x < -6) f.x = width + 6; if (f.x > width + 6) f.x = -6;
+          ctx.globalAlpha = f.a; ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill();
+        }
+        ctx.globalAlpha = 1; requestAnimationFrame(step);
+      }
+      addEventListener('resize', resize, { passive: true }); resize(); requestAnimationFrame(step);
+
+      document.getElementById('toggleSnow').addEventListener('click', () => {
+        running = !running; if (running) requestAnimationFrame(step); else ctx.clearRect(0, 0, width, height);
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
